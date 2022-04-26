@@ -42,6 +42,10 @@ Create wireframes for end-product image. Simple sites with pictures and username
 
 ## Layout / Wireframes
 
+<img width="455" alt="Screen Shot 2022-04-26 at 11 31 14 AM" src="https://user-images.githubusercontent.com/101987493/165358127-303829eb-db5b-47c5-b48f-4db596c5d275.png">
+
+
+
 ## Installation Instructions
 
 ## Major Hurdles
