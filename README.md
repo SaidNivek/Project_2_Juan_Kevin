@@ -44,6 +44,10 @@ Create wireframes for end-product image. Simple sites with pictures and username
 
 <img width="455" alt="Screen Shot 2022-04-26 at 11 31 14 AM" src="https://user-images.githubusercontent.com/101987493/165358127-303829eb-db5b-47c5-b48f-4db596c5d275.png">
 
+### ERD
+![image](https://user-images.githubusercontent.com/89223981/165361396-6e5de115-d953-42d4-a458-6fa232c6113e.png)
+
+
 
 
 ## Installation Instructions
