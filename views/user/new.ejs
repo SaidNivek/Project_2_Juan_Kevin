@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head.ejs',{ pageName :  "Home" }) %>
+
+<body> 
+
+    <h1>Register as a new user</h1>
+    <form class="form" method="POST" action="/products">
+            <!-- method => POST - attach the data to post body rather than in the url query string(GET request) -->
+            <!-- action => destination for the post req -->
+            <div class="form-input">
+                <label for="username"> Username: </label>
+                <input id="username" name="username" type="text" />
+            </div>
+            <div class="form-input">
+                <label for="first_name"> First Name: </label>
+                <input id="first_name" name="first_name" type="number" />
+            </div>
+            <div class="form-input">
+                <label for="last_name"> Last Name: </label>
+                <input id="last_name" name="last_name" type="text" />
+            </div>
+            <div class="form-input">
+                <label for="image"> Profile Picture (url): </label>
+                <input id="image" name="image" type="text" />
+            </div>
+            <input type="submit" value="Register!">
+        </form>
+</body>
+
+</html>
