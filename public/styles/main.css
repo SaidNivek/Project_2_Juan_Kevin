@@ -22,12 +22,18 @@ h2 {
     gap: 20px;
 }
 
-.main-page-user {
+.main-page-user, .form, .form-input {
     width: 50vw;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px
+}
+
+.form, .form-input {
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
 }
 
 .user-image {

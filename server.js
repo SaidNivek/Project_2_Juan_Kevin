@@ -2,7 +2,7 @@
 const express = require('express');
 const methodOverride = require('method-override')
 // const productController = require('./controllers/products_controller')
-// const controllers = require('./controllers')
+const controllers = require('./controllers')
 // create instance
 const app = express()
 // Needed to get the information from the database
@@ -32,13 +32,11 @@ app.use(methodOverride('_method'))
 // body-parser middleware -> intercept the data from our post request
 // take all of the data in the url-string content and create an object - req.params 
 // request body -> data - parsed by the middleware
-
 app.use(express.urlencoded({ extended: false }))
 
 
 // CONTROLLERS 
-
-// app.use('/products', controllers.products) // "products" router
+app.use('/user', controllers.user) // "products" router
 // app.use('/reviews', controllers.reviews) // reviews controller
 // additional controllers can be added here. These controllers will handle requests for other resources (transactions, users, auth, landing pages, etc)
 
