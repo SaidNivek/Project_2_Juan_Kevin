@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs',{ pageName :  "Home" }) %>
+
+<body> 
+ 
+    <section>
+            <div class="main-page-title">
+                <div>
+                    <h1 class="title">Welcome to IG 2.0</h1>
+                </div>
+                <div>
+                    <p>Login</p>
+                    <p>Register</p>                
+                </div>
+            </div>
+    </section>
+
+    <main class="container">
+        <div>
+
+        </div>
+
+        <% for (let i = 0; i < users.length; i++)  { %>
+            <a class="link" href="#">
+                <div class="main-page-user">
+                    <div>
+                        <img class="user-image" src="<%= users[i].profPicture %>" alt="Picture of <%= users[i].username %>">
+                    </div>
+                    <div>
+                        <h2><%= users[i].username %></h2>
+                    </div>
+                </div>
+            </a>            
+        <% } %>
+
+    </main>
+</body>
+
+</html> 
