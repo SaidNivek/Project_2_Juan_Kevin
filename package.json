@@ -1,0 +1,29 @@
+{
+  "name": "project_2_juan_kevin",
+  "version": "1.0.0",
+  "description": "## Project Description Login online, see user pictures and stuff, with a description.  Before logging in immediately, where you have to sign in before you see pictures, this one will let you still see pictures even if you don't log in.  You can see the pictures posted and click on them, etc., without needing to log in.  Sort of a pinterest/IG mashup.  STRETCH** Can people comment if they are not logged in? (Anonymous user thing?)  Each user would have their own page (like IG/Pinterest) and there would be a main feed STRETCH** with timestamped photos.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaidNivek/Project_2_Juan_Kevin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaidNivek/Project_2_Juan_Kevin/issues"
+  },
+  "homepage": "https://github.com/SaidNivek/Project_2_Juan_Kevin#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.15"
+  }
+}
