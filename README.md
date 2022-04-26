@@ -12,12 +12,12 @@ Create wireframes for end-product image. Simple sites with pictures and username
 - Have a user profile
 - Update their profiles
 - Update their pictures
-- Update their comemnts
+- Update their comments
 - Delete their comments
 - Delete their pictures
 - Delete their profile
 - Easily see if there are other pictures posted on a main page
-- user authentication / email sign-up
+- User authentication / email sign-up
 
 ## MVP Goals
 - Post pictures
@@ -35,7 +35,8 @@ Create wireframes for end-product image. Simple sites with pictures and username
 - Main feed would have photos by timestamp
 - user authentication / email sign-up
 - Comments by anonymous users or only authenticated users?
-- 
+- Grid of posted pictures on profile page
+- Delete picture or comments if authenticated
 
 ## MVP Project Description
 
