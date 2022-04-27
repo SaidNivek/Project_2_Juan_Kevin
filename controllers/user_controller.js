@@ -73,7 +73,7 @@ router.get('/:_id/edit', async (req,res, next)=>{
         const context = {
             user: updatedUser
         }
-        return res.render('../views/User/edit.ejs', context)
+        return res.render('../views/user/edit.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -104,7 +104,8 @@ router.post('/', async (req, res, next) => {
 router.delete('/:id', async (req,res, next)=>{
     try {
         const deletedUser = await db.User.findByIdAndDelete(req.params.id);
-        console.log(deletedUser);
+        const deletedPhotos = await db.Photo.deleteMany({user: req.params.id})
+        console.log(deletedPhotos)
         return res.redirect('/')
     } catch (error) {
         console.log(error);
