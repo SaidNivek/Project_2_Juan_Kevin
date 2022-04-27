@@ -27,7 +27,11 @@
             </div>         
     <a href="/user/<%= oneUser._id %>/edit"><button>Click here to change your profile picture</button></a>
 </main>
-
+<div>
+    <form method="POST" action="/user/<%=oneUser._id%>?_method=DELETE">
+        <input class="delete-button" type="submit" value="Delete Profile"/>
+    </form>
+</div>
 
 </body>
 
