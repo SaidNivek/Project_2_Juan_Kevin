@@ -73,13 +73,18 @@ router.get('/:id/edit', async (req,res, next)=>{
         const context = {
             user: updatedUser
         }
-        return res.render('../views/user/edit.ejs', context)
+        return res.render('../views/User/edit.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;
         return next();
     }
 })
+
+
+
+//delete route 
+
 
 // User "create" route - POST request -> request body (new user data)
 router.post('/', async (req, res, next) => {
