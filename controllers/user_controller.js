@@ -66,9 +66,9 @@ router.get('/:id/', async (req, res, next) => {
 })
 
 // User "edit" route - GET request - display an edit form for one user
-router.get('/:id/edit', async (req,res, next)=>{
+router.get('/:_id/edit', async (req,res, next)=>{
     try {
-        const updatedUser = await db.User.findById(req.params.id);
+        const updatedUser = await db.User.findById(req.params._id);
         console.log(updatedUser);
         const context = {
             user: updatedUser
@@ -118,7 +118,7 @@ router.put('/:id', async (req, res, next)=>{
     try {
         const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body);
         console.log(updatedUser);
-        return res.redirect(`/user/:id`)
+        return res.redirect(`./${req.params.id}`)
     } catch (error) {
         console.log(error);
         req.error = error;
