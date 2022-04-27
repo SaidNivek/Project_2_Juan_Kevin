@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head.ejs',{ pageName :  "New Photo" }) %>
+
+<body>
+
+    <h1>Add a photo to your page!</h1>
+    <form class="form" method="POST" action="/user/photos/">
+          
+            <div class="form-input">
+                <label for="image"> Photo (url): </label>
+                <input id="image" name="image" type="text" />
+            </div>
+            <div class="form-input">
+                <label for="caption"> Caption: </label>
+                <input id="caption" name="caption" type="text" />
+            </div>
+            <div class="form-input">
+                <label for="user"></label>
+                <input id="user" name="user" type="hidden" value="<%= id %>"/>
+            </div>
+            <input type="submit" value="Add Photo!">
+            <input class="add-button" type="submit" value="Add Picture"/>
+        </form>
+</body>
+</html>

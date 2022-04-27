@@ -19,12 +19,48 @@ const db = require('../models')
 // Photo SHOW route
 
 // Photo NEW route
-router.get('/new', (req, res) => {
-    res.send('testing new photo route')
+router.get('/new/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id
+        console.log(userId)
+        const context = { id: userId }
+        res.render('../views/photo/new.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+// Photo CREATE route
+router.post('/', async (req, res, next) => {
+    try {
+        const newPhotoData = req.body
+        const newPhoto = await db.Photo.create(newPhotoData);
+        // console.log(`The created photo is ${newPhotoData}`)
+        res.redirect(`/user/${newPhoto.user._id}`);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 })
 
 // Photo EDIT route
-
+router.get('/:_id/edit', async (req,res, next)=>{
+    try {
+        const updatedPhoto = await db.Photo.findById(req.params._id);
+        console.log(updatedPhoto);
+        const context = {
+            user: updatedPhoto
+        }
+        return res.render('../views/photo/edit.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 
 module.exports = router
