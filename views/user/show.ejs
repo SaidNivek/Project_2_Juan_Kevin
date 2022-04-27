@@ -38,8 +38,12 @@
     <section>
         <div picture-grid-div>
             <% for (let i = 0; i < photos.length; i ++) { %>
-                <img src="<%= photos[i].image %>" alt="an image" />
-                <p><%= photos[i].caption %></p>
+                <a href="">
+                    <div>
+                        <img src="<%= photos[i].image %>" alt="an image" />
+                        <p><%= photos[i].caption %></p>
+                    </div>
+                </a>
            <% } %>
         </div>
     </section>
