@@ -60,3 +60,8 @@ h2 {
 .link:visited {
     color: black;
 }
+
+.delete-button {
+    background-color: red;
+    color: white;
+}
