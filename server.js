@@ -38,6 +38,7 @@ app.use(express.urlencoded({ extended: false }))
 // CONTROLLERS 
 app.use('/user', controllers.user) // "user" router
 app.use('/user/photos/', controllers.photo) // photo router
+app.use('/user/photos/comments', controllers.comment)
 
 
 // app.use('/reviews', controllers.reviews) // reviews controller

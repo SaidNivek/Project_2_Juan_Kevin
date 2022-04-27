@@ -4,4 +4,5 @@
 module.exports = {
     user: require('./user_controller.js'),
     photo: require('./photo_controller.js'),
+    comment: require('./comment_controller.js'),
 }
