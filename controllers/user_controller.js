@@ -51,11 +51,11 @@ router.get('/new', (req, res) => {
 router.get('/:id/', async (req, res, next) => {
     try {
         const foundUser = await db.User.findById(req.params.id)
-        // const allReviews = await db.Review.find({user: req.params.id})
+        const allPhotos = await db.Photo.find({user: req.params.id})
         // console.log(allReviews.length, 'Reviews Found');
         const context = { 
             oneUser: foundUser,
-            // reviews: allReviews,
+            photos: allPhotos,
         }
         return res.render('../views/user/show.ejs', context)
     } catch (error) {
