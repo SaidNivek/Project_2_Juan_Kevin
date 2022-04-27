@@ -19,7 +19,7 @@
 
     <main class="container">  
         <% for (let i = 0; i < users.length; i++)  { %>
-            <a class="link" href="#">
+            <a class="link" href="/user/<%= users[i]._id %>">
                 <div class="main-page-user">
                     <div>
                         <img class="user-image" src="<%= users[i].image %>" alt="Picture of <%= users[i].username %>">

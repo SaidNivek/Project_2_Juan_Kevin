@@ -47,28 +47,23 @@ router.get('/new', (req, res) => {
     res.render('../views/user/new.ejs')
 })
 
-
-
 // User "show" route - GET request - display photos from one user
-
 router.get('/:id/', async (req, res, next) => {
     try {
         const foundUser = await db.User.findById(req.params.id)
         // const allReviews = await db.Review.find({user: req.params.id})
-        console.log(allReviews.length, 'Reviews Found');
+        // console.log(allReviews.length, 'Reviews Found');
         const context = { 
             oneUser: foundUser,
             // reviews: allReviews,
         }
-        return res.render('show.ejs', context)
+        return res.render('../views/user/show.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;
         return next();
     }
 })
-
-
 
 // User "edit" route - GET request - display an edit form for one user
 router.get('/:id/edit', async (req,res, next)=>{
@@ -78,7 +73,7 @@ router.get('/:id/edit', async (req,res, next)=>{
         const context = {
             user: updatedUser
         }
-        return res.render('edit.ejs', context)
+        return res.render('../views/user/edit.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -100,8 +95,6 @@ router.post('/', async (req, res, next) => {
     }
 })
 
-
-
 // User "destroy" route - DELETE request - removes data from user database and redirects to index route
 router.delete('/:id', async (req,res, next)=>{
     try {
@@ -121,8 +114,6 @@ router.delete('/:id', async (req,res, next)=>{
 })
 
 // User "UPDATE" route - PUT request - update the User database and redirects to show route
-
-
 router.put('/:id', async (req, res, next)=>{
     try {
         const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body);
