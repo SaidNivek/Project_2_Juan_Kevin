@@ -4,9 +4,9 @@ const methodOverride = require('method-override')
 // const productController = require('./controllers/products_controller')
 // const controllers = require('./controllers')
 // create instance
-const app = express();
-
-
+const app = express()
+// Needed to get the information from the database
+const db = require('./data')
 // db connection
 require('./config/db.connection')
 
@@ -57,7 +57,12 @@ app.use(express.urlencoded({ extended: false }))
 
 // Products "Home" route 
 
-app.get('/', (request, response) => response.send('Welcome to IG 2.0!'))
+app.get('/', (req, res) => {
+    context = {
+        users: db
+    }
+    res.render('index.ejs', context)
+})
 
 /* 
     EXPRESS Server: initializes the server; app.listen allows your computer to receive requests at http://localhost:4000/ 
