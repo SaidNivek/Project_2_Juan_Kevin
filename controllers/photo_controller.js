@@ -38,7 +38,6 @@ router.get('/:id/', async (req, res, next) => {
 router.get('/new/:id', async (req, res, next) => {
     try {
         const userId = req.params.id
-        console.log(userId)
         const context = { id: userId }
         res.render('../views/photo/new.ejs', context)
     } catch (error) {
@@ -82,6 +81,7 @@ router.get('/:_id/edit', async (req,res, next)=>{
 router.delete('/:id', async (req,res, next)=>{
     try {
         const userId = await db.Photo.findById(req.params.id).populate("user")
+        console.log('================================')
         console.log(userId._id)
         const user = userId._id;
         const context = {
@@ -89,7 +89,7 @@ router.delete('/:id', async (req,res, next)=>{
         }
         const deletedPhoto = await db.Photo.findByIdAndDelete(req.params.id);
         // console.log(deletedPhoto);
-        return res.redirect(`/user/${userId._id}`, {context})
+        return res.redirect(`/user/${userId._id}`)
     } catch (error) {
         console.log(error);
         req.error = error;
