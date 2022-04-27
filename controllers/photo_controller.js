@@ -17,10 +17,22 @@ const db = require('../models')
 // ===================================
 
 // Photo SHOW route
-router.get('/:id', (req, res) => {
-    res.render('../views/photo/show.ejs')
+router.get('/:id/', async (req, res, next) => {
+    try {
+        const foundPhoto = await db.Photo.findById(req.params.id)
+        const allPhotos = await db.Photo.find({photo: req.params.id})
+        // console.log(allReviews.length, 'Reviews Found');
+        const context = { 
+            onePhoto: foundPhoto,
+            photos: allPhotos,
+        }
+        return res.render('../views/photo/show.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 })
-
 
 // Photo NEW route
 router.get('/new/:id', async (req, res, next) => {
@@ -66,5 +78,17 @@ router.get('/:_id/edit', async (req,res, next)=>{
     }
 })
 
+/// delete and destroy route
+router.delete('/:_id', async (req,res, next)=>{
+    try {
+        const deletedPhoto = await db.onePhoto.findByIdAndDelete(req.params._id);
+        console.log(deletedonePhoto);
+        return res.redirect('/')
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 module.exports = router

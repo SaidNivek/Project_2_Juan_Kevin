@@ -6,8 +6,34 @@
 <body>
     <section>
         <h2>testing image show route</h2>
+        
+            <div>
+                <section>
+                    <div picture-grid-div>
+                      
+                                <div>
+                                    <img src="<%= onePhoto.image %>" alt="an image" />
+                                    
+                                </div>
+                
+                    
+                    </div>
+                </section>
+
+
+
+                <div>
+                    <form method="POST" action="/photo/<%=onePhoto.id%>?_method=DELETE">
+                        <input class="delete-button" type="submit" value="Delete Picture"/>
+                    </form>
+                </div>
+             </div>
+         
     </section> 
 
+ <div>
+      
+    </div>
 
 </body>
 
