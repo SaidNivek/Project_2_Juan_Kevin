@@ -26,7 +26,7 @@ const db = require('../models')
 
 /*  Beginning of Products routes */
 
-// get all products route
+// get all z route
 router.get('/', async (req, res, next) => {
     try {
         const products = await db.Product.find({});
