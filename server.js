@@ -37,7 +37,11 @@ app.use(express.urlencoded({ extended: false }))
 
 // CONTROLLERS 
 app.use('/user', controllers.user) // "user" router
+<<<<<<< HEAD
 // app.use('/user/photos', controllers.photo) // photo router
+=======
+app.use('/user/:id/photos', controllers.photo) // photo router
+>>>>>>> e8260f65f5f4f96415da0d9fa0722cc7cf8eb902
 // app.use('/reviews', controllers.reviews) // reviews controller
 // additional controllers can be added here. These controllers will handle requests for other resources (transactions, users, auth, landing pages, etc)
 
