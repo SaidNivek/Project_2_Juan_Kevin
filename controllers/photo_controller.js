@@ -17,6 +17,10 @@ const db = require('../models')
 // ===================================
 
 // Photo SHOW route
+router.get('/:id', (req, res) => {
+    res.render('../views/photo/show.ejs')
+})
+
 
 // Photo NEW route
 router.get('/new/:id', async (req, res, next) => {
@@ -47,7 +51,20 @@ router.post('/', async (req, res, next) => {
 })
 
 // Photo EDIT route
-
+router.get('/:_id/edit', async (req,res, next)=>{
+    try {
+        const updatedPhoto = await db.Photo.findById(req.params._id);
+        console.log(updatedPhoto);
+        const context = {
+            user: updatedPhoto
+        }
+        return res.render('../views/photo/edit.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 
 module.exports = router

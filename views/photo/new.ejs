@@ -7,8 +7,7 @@
 
     <h1>Add a photo to your page!</h1>
     <form class="form" method="POST" action="/user/photos/">
-            <!-- method => POST - attach the data to post body rather than in the url query string(GET request) -->
-            <!-- action => destination for the post req -->
+          
             <div class="form-input">
                 <label for="image"> Photo (url): </label>
                 <input id="image" name="image" type="text" />
@@ -22,6 +21,7 @@
                 <input id="user" name="user" type="hidden" value="<%= id %>"/>
             </div>
             <input type="submit" value="Add Photo!">
+            <input class="add-button" type="submit" value="Add Picture"/>
         </form>
 </body>
 </html>
