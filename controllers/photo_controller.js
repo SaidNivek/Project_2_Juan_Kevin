@@ -89,7 +89,7 @@ router.delete('/:id', async (req,res, next)=>{
         }
         const deletedPhoto = await db.Photo.findByIdAndDelete(req.params.id);
         // console.log(deletedPhoto);
-        return res.redirect(`/user/${userId._id}`)
+        return res.redirect(`/`)
     } catch (error) {
         console.log(error);
         req.error = error;

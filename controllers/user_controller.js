@@ -22,7 +22,7 @@ router.get('/new', (req, res) => {
 })
 
 // User "show" route - GET request - display photos from one user
-router.get('/:id/', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     try {
         const foundUser = await db.User.findById(req.params.id)
         const allPhotos = await db.Photo.find({user: req.params.id})
