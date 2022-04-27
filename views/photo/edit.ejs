@@ -4,7 +4,7 @@
     <%- include('../partials/head.ejs', { pageName: "Update Profile" }) %>
 
 <body>
-    <%- include('partials/nav.ejs') %>
+    <%- include('../partials/nav.ejs') %>
 
     <h1> Change Profile Picture | <%= user.username%></h1></h1>
 
@@ -15,6 +15,6 @@
             <input type="text" name="image" value="<%= photo.image%>"/>
         </div>
     </div>  
-    
+
 </body>
 </html>
