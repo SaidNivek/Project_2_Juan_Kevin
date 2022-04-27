@@ -17,7 +17,9 @@ const db = require('../models')
 // ===================================
 
 // Photo SHOW route
-router.get
+router.get('/:id', (req, res) => {
+    res.render('../views/photo/show.ejs')
+})
 
 
 // Photo NEW route

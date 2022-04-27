@@ -38,7 +38,7 @@
     <section>
         <div picture-grid-div>
             <% for (let i = 0; i < photos.length; i ++) { %>
-                <a href="">
+                <a href="/user/photos/<%= photos[i]._id %>">
                     <div>
                         <img src="<%= photos[i].image %>" alt="an image" />
                         <p><%= photos[i].caption %></p>
