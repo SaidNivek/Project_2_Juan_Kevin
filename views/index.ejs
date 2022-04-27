@@ -17,16 +17,12 @@
             </div>
     </section>
 
-    <main class="container">
-        <div>
-
-        </div>
-
+    <main class="container">  
         <% for (let i = 0; i < users.length; i++)  { %>
             <a class="link" href="#">
                 <div class="main-page-user">
                     <div>
-                        <img class="user-image" src="<%= users[i].profPicture %>" alt="Picture of <%= users[i].username %>">
+                        <img class="user-image" src="<%= users[i].image %>" alt="Picture of <%= users[i].username %>">
                     </div>
                     <div>
                         <h2><%= users[i].username %></h2>

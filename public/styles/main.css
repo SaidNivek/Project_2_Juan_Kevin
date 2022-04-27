@@ -1,3 +1,6 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -23,11 +26,10 @@ h2 {
 }
 
 .main-page-user, .form, .form-input {
-    width: 50vw;
+    width: 25vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 50px
 }
 
 .form, .form-input {
@@ -39,6 +41,7 @@ h2 {
 .user-image {
     border-radius: 50%;
     width: 8vw;
+    height: 8vw;
 }
 
 .link {
