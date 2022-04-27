@@ -4,7 +4,6 @@ const userSchema = new mongoose.Schema ({
     first_name: {
         type: String,
         required: [true, 'Enter Name'],
-        unique: true,
     },
     last_name: {
         type: String,
@@ -13,6 +12,7 @@ const userSchema = new mongoose.Schema ({
     username: {
         type: String,
         required: true,
+        unique: true,
     },
     // password: {
     //     type: String,
