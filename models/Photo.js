@@ -4,8 +4,8 @@ const photoSchema = new mongoose.Schema ({
     image: {
         type: String,
     },
-    username: {
-        type: String,
+    user: {
+        type: User,
         required: true,
     },
 },
