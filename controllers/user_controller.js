@@ -83,7 +83,7 @@ router.get('/:_id/edit', async (req,res, next)=>{
 
 
 
-//delete route 
+
 
 
 // User "create" route - POST request -> request body (new user data)
@@ -101,7 +101,7 @@ router.post('/', async (req, res, next) => {
 })
 
 // User "destroy" route - DELETE request - removes data from user database and redirects to index route
-router.delete('/:id', async (req,res, next)=>{
+router.delete('/:_id', async (req,res, next)=>{
     try {
         const deletedUser = await db.User.findByIdAndDelete(req.params.id);
         // delete one user (req.params.id)
@@ -110,7 +110,7 @@ router.delete('/:id', async (req,res, next)=>{
         // confirming the deletion of reviews 
         // 'orphan' documents in our reviews collection are removed
         console.log(deletedUser);
-        return res.redirect('/')
+        return res.redirect('../views/User/edit.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;
