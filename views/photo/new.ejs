@@ -4,10 +4,11 @@
     <%- include('../partials/head.ejs',{ pageName :  "New Photo" }) %>
 
 <body>
+    <%- include('partials/nav.ejs') %>
 
     <h1>Add a photo to your page!</h1>
-    <form class="form" method="POST" action="/user/photos/">
-          
+    
+    <form class="form" method="POST" action="/user/photos/">          
             <div class="form-input">
                 <label for="image"> Photo (url): </label>
                 <input id="image" name="image" type="text" />
@@ -20,7 +21,6 @@
                 <label for="user"></label>
                 <input id="user" name="user" type="hidden" value="<%= id %>"/>
             </div>
-            <!-- <input type="submit" value="Add Photo!"> -->
             <input class="add-button" type="submit" value="Add Picture"/>
         </form>
 </body>

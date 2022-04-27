@@ -4,11 +4,11 @@
     <%- include('../partials/head.ejs',{ pageName :  "Home" }) %>
 
 <body>
+    <%- include('partials/nav.ejs') %>
 
     <h1>Register as a new user</h1>
     <form class="form" method="POST" action="/user">
-            <!-- method => POST - attach the data to post body rather than in the url query string(GET request) -->
-            <!-- action => destination for the post req -->
+
             <div class="form-input">
                 <label for="username"> Username: </label>
                 <input id="username" name="username" type="text" />
