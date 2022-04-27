@@ -31,7 +31,7 @@ const commentSchema = new mongoose.Schema ({
         // reference is how mongoose will know where to look up documents
         // that match the current product's ObjectId
         // ref should store a string that matches the name of your related model
-},
+}},
     {
         timestamps: true
     },
