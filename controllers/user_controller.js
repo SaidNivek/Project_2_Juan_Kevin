@@ -6,27 +6,28 @@ const router = express.Router()
 
 /* 
     App Data:
-    The products routes below accesses data from the 'products' array (DB) by its index value - we will use 'productId' as the param key.
+    The user routes below accesses data from the 'user' DB by its index value - we will use 'productId' as the param key.
 */
 
 // MODELS
 const db = require('../models')
 
 // express.Router breakdown 
-// incoming request to: http://localhost:4000/products
-// in server.js we have the following code - app.use('/products', products_controller)
+// incoming request to: http://localhost:5000/user
+// in server.js we have the following code - app.use('/user', user_controller)
 
-// the products controller's express.Router will then take on processing the request: 
+// the user controller's express.Router will then take on processing the request: 
 
-// app.use passes the request {} to the products_controller.js module
+// app.use passes the request {} to the user_controller.js module
 // the request evaluates the available routes in the module
 // if a matching URL path is found, that route's callback is executed
 // otherwise, the remaining routes in server.js (after the middleware) will execute
 
+// ===================================
+/*  Beginning of User routes */
+// ===================================
 
-/*  Beginning of Products routes */
-
-// get all z route
+// get all user route (same as home page)
 router.get('/', async (req, res, next) => {
     try {
         const products = await db.Product.find({});
@@ -107,9 +108,9 @@ router.get('/:id/edit', async (req,res, next)=>{
 router.post('/', async (req, res, next) => {
     try {
         // console.log(`The req.body is ${req.body}`)
-        const createdProduct = await db.Product.create(req.body);
-        console.log(`The created product is ${createdProduct}`)
-        res.redirect('/products');
+        const createdUser = await db.User.create(req.body);
+        console.log(`The created User is ${createdUser}`)
+        res.redirect('/');
     } catch (error) {
         console.log(error);
         req.error = error;
