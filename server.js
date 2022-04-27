@@ -6,7 +6,7 @@ const controllers = require('./controllers')
 // create instance
 const app = express()
 // Needed to get the information from the database
-const db = require('./data')
+const db = require('./models')
 // db connection
 require('./config/db.connection')
 
@@ -53,13 +53,21 @@ app.use('/user', controllers.user) // "user" router
 */
 
 
-// Products "Home" route 
+// "Home" route, the main page of the program 
 
-app.get('/', (req, res) => {
-    context = {
-        users: db
+app.get('/', async (req, res, next) => {
+    try {
+        const users = await db.User.find({})
+        context = {
+            users
+        }
+        console.log(users)
+        res.render('index.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
     }
-    res.render('index.ejs', context)
 })
 
 /* 
