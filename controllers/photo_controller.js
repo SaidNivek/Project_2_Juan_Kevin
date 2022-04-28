@@ -22,7 +22,6 @@ router.get('/:id/', async (req, res, next) => {
         const foundPhoto = await db.Photo.findById(req.params.id)
         const allPhotos = await db.Photo.find({photo: req.params.id})
         const allComments = await db.Comment.find({photo: req.params.id})
-        console.log(allComments.length, 'Comments Found');
         const context = { 
             onePhoto: foundPhoto,
             photos: allPhotos,
@@ -54,7 +53,6 @@ router.post('/', async (req, res, next) => {
     try {
         const newPhotoData = req.body
         const newPhoto = await db.Photo.create(newPhotoData);
-        // console.log(`The created photo is ${newPhotoData}`)
         res.redirect(`/user/${newPhoto.user._id}`);
     } catch (error) {
         console.log(error);
@@ -96,16 +94,8 @@ router.get('/:_id/edit', async (req,res, next)=>{
 /// delete and destroy route
 router.delete('/:id', async (req,res, next)=>{
     try {
-        const userId = await db.Photo.findById(req.params.id).populate("user")
-        console.log('================================')
-        console.log(userId._id)
-        const user = userId._id;
-        const context = {
-            oneUser: user,
-        }
         const deletedPhoto = await db.Photo.findByIdAndDelete(req.params.id);
-        // console.log(deletedPhoto);
-        return res.redirect(`/`)
+        return res.redirect(`/user/${deletedPhoto.user}`)
     } catch (error) {
         console.log(error);
         req.error = error;
