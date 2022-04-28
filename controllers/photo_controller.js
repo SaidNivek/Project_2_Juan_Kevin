@@ -95,6 +95,7 @@ router.get('/:_id/edit', async (req,res, next)=>{
 router.delete('/:id', async (req,res, next)=>{
     try {
         const deletedPhoto = await db.Photo.findByIdAndDelete(req.params.id);
+        const deletedComments = await db.Comment.deleteMany({photo: req.params.id})
         return res.redirect(`/user/${deletedPhoto.user}`)
     } catch (error) {
         console.log(error);
