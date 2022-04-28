@@ -18,19 +18,26 @@
                     </div>
                 </section>
                 <div>
-                    <p>
-                        comments:
-                    </p>
-                    <!-- <input type="submit" value="Edit Comment: <%= onePhoto.name%>"/> -->
+                    <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button>Add a Comment!</button></a>
                 </div>
-
+                <div>
+                    <p>Comments:</p>
+                    <% for (let i = 0; i < comments.length; i++) { %>
+                        <div class="comment-div">
+                            <p><%= comments[i].comment %></p>
+                            <form method="POST" action="/user/photos/comments/<%=comments[i]._id%>?_method=DELETE">
+                                <input class="delete-button" type="submit" value="Delete Comment"/>
+                            </form>
+                        </div>
+                    <% } %>
+                </div>
+                <!-- <div>
+                    <input type="submit" value="Edit Comment: <%= onePhoto.name%>"/>
+                </div> -->                
                 <div>
                     <form method="POST" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
                         <input class="delete-button" type="submit" value="Delete Picture"/>
                     </form>
-                    <div>
-                        <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button>Add a Comment!</button></a>
-                    </div>
                 </div>
              </div>         
     </section> 

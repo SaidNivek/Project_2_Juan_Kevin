@@ -21,10 +21,11 @@ router.get('/:id/', async (req, res, next) => {
     try {
         const foundPhoto = await db.Photo.findById(req.params.id)
         const allPhotos = await db.Photo.find({photo: req.params.id})
-        // console.log(allReviews.length, 'Reviews Found');
+        const allComments = await db.Comment.find({photo: req.params.id})
         const context = { 
             onePhoto: foundPhoto,
             photos: allPhotos,
+            comments: allComments,
         }
         return res.render('../views/photo/show.ejs', context)
     } catch (error) {
@@ -52,7 +53,6 @@ router.post('/', async (req, res, next) => {
     try {
         const newPhotoData = req.body
         const newPhoto = await db.Photo.create(newPhotoData);
-        // console.log(`The created photo is ${newPhotoData}`)
         res.redirect(`/user/${newPhoto.user._id}`);
     } catch (error) {
         console.log(error);
@@ -102,8 +102,8 @@ router.delete('/:id', async (req,res, next)=>{
         //     oneUser: user,
         // }
         const deletedPhoto = await db.Photo.findByIdAndDelete(req.params.id);
-        // console.log(deletedPhoto);
-        return res.redirect(`/`)
+        const deletedComments = await db.Comment.deleteMany({photo: req.params.id})
+        return res.redirect(`/user/${deletedPhoto.user}`)
     } catch (error) {
         console.log(error);
         req.error = error;

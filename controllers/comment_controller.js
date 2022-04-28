@@ -17,21 +17,6 @@ const db = require('../models')
 /*  Beginning of Comment routes */
 // ===================================
 
-// Comment SHOW route
-router.get('/:id', async (req, res, next) => {
-    try {
-        const allComments = await db.Comment.findById(req.params.id)
-        context = {
-            comments: allComments,
-        }
-        res.render('../views/comment/show.ejs', context)
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
-
 // Comment NEW route
 router.get('/new/:id', async (req, res, next) => {
     try { 
@@ -70,5 +55,16 @@ router.post('/', async (req, res, next) => {
 // Comment UPDATE route
 
 // Comment DELETE route
+router.delete('/:id', async (req,res, next)=>{
+    try {
+        const deletedComment = await db.Comment.findByIdAndDelete(req.params.id);
+        console.log(deletedComment)
+        return res.redirect(`/user/photos/${deletedComment.photo}`)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 module.exports = router
