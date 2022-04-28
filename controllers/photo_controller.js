@@ -93,14 +93,6 @@ router.get('/:_id/edit', async (req,res, next)=>{
     }
 })
 
-
-
-
-
-
-
-
-
 /// delete and destroy route
 router.delete('/:id', async (req,res, next)=>{
     try {
