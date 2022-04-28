@@ -27,7 +27,8 @@
                 <div>
                     <p>Comments:</p>
                     <% for (let i = 0; i < comments.length; i++) { %>
-                        <div class="comment-div">
+                        <p><%= comments[i].username %> commented:</p>
+                        <div class="comment-div">                            
                             <p><%= comments[i].comment %></p>
                             <form method="POST" action="/user/photos/comments/<%=comments[i]._id%>?_method=DELETE">
                                 <input class="delete-button" type="submit" value="Delete Comment"/>

@@ -32,11 +32,19 @@ h2 {
     border-radius: 25px;
 }
 
-.main-page-user, .form, .form-input, .comment-div {
+.main-page-user, .form, .form-input {
     width: 25vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.comment-div {
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgrey;
 }
 
 .form, .form-input {
