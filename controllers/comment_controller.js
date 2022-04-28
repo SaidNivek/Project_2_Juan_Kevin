@@ -39,9 +39,9 @@ router.get('/new/:id', async (req, res, next) => {
         const context = { 
             photo: thePhoto, 
         }
-        console.log(thePhoto)
-        console.log('==================================')
-        console.log(thePhoto.user._id)
+        // console.log(thePhoto)
+        // console.log('==================================')
+        // console.log(thePhoto.user._id)
         res.render('../views/comment/new.ejs', context)
     } catch (error) {
         console.log(error);
@@ -55,8 +55,8 @@ router.post('/', async (req, res, next) => {
     try {
         const newCommentData = req.body
         const newComment = await db.Comment.create(newCommentData);
-        console.log('++++++++++++++++++++++++++++++++++++++++++')
-        console.log(newComment)
+        // console.log('++++++++++++++++++++++++++++++++++++++++++')
+        // console.log(newComment)
         res.redirect(`/user/photos/${newComment.photo}`);
     } catch (error) {
         console.log(error);
