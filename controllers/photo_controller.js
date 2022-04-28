@@ -94,15 +94,8 @@ router.get('/:_id/edit', async (req,res, next)=>{
 /// delete and destroy route
 router.delete('/:id', async (req,res, next)=>{
     try {
-        const userId = await db.Photo.findById(req.params.id).populate("user")
-        console.log('================================')
-        console.log(userId._id)
-        const user = userId._id;
-        const context = {
-            oneUser: user,
-        }
         const deletedPhoto = await db.Photo.findByIdAndDelete(req.params.id);
-        return res.redirect(`/`)
+        return res.redirect(`/user/${deletedPhoto.user}`)
     } catch (error) {
         console.log(error);
         req.error = error;
