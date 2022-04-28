@@ -25,6 +25,13 @@ h2 {
     gap: 20px;
 }
 
+
+.small-user-image {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 25px;
+}
+
 .main-page-user, .form, .form-input, .comment-div {
     width: 25vw;
     display: flex;

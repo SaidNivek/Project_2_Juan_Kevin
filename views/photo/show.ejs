@@ -8,7 +8,11 @@
         <%- include('../partials/nav.ejs') %>
 
     <section>
-        <h2>look 👀</h2>        
+        <a href="/user/<%= onePhoto.user._id %>">
+            <img class="small-user-image" src="<%= onePhoto.user.image %>" alt="<%= onePhoto.user.username %>'s image">
+            <%= onePhoto.user.username %>
+        </a>
+        <h2>look 👀</h2>
             <div>
                 <section>
                     <div picture-grid-div>                      
