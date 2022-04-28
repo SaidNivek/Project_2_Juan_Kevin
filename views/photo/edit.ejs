@@ -4,6 +4,8 @@
     <%- include('../partials/head.ejs', { pageName: "Update Profile" }) %>
 
 <body>
+    <%- include('../partials/nav.ejs') %>
+
     <h1> Change Profile Picture | <%= user.username%></h1></h1>
 
     <div> 
@@ -12,11 +14,7 @@
             <label>Photo image</label>
             <input type="text" name="image" value="<%= photo.image%>"/>
         </div>
-        <div>
-            <!-- <form method="POST" action="/user/<%=userj.m.gracie@gmail.com._id%>?_method=DELETE">
-                <input type="submit" value="Delete picture"/>
-            </form> -->
-        </div>
     </div>  
+
 </body>
 </html>

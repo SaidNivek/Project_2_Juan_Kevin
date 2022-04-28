@@ -1,4 +1,5 @@
 module.exports = {
     User: require('./User'),
-    Photo: require('./Photo')
+    Photo: require('./Photo'),
+    Comment: require('./Comment')
 }

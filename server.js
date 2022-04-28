@@ -20,9 +20,6 @@ app.set('view engine', 'ejs')
     EXPRESS Middleware - a later topic - this code will run for every route
 */
 
-// first middleware - middleware executes for every request - 
-// express.static helps express find where certain files are located
-
 app.use(express.static('public'))
 
 // method override middleware
@@ -34,28 +31,10 @@ app.use(methodOverride('_method'))
 // request body -> data - parsed by the middleware
 app.use(express.urlencoded({ extended: false }))
 
-
 // CONTROLLERS 
 app.use('/user', controllers.user) // "user" router
 app.use('/user/photos/', controllers.photo) // photo router
 app.use('/user/photos/comments', controllers.comment)
-
-
-// app.use('/reviews', controllers.reviews) // reviews controller
-// additional controllers can be added here. These controllers will handle requests for other resources (transactions, users, auth, landing pages, etc)
-
-/* 
-    EXPRESS Routing: express provides route methods that will intercept requests to the server:
-    1. filter by method - app.get will only run if the type of request has a GET method
-    2. match the url path argument - a requested url from the client - if a match is found a call back function is called
-    3. the callback function - provided two arguments by express representing data/methods concerning the request and the response. 
-        3a - request {} - a request object provides information about the request made by the client
-        3b - response {} - a response object is a collection of properties / methods. 
-        3c - response.send() - a response method that closes response cycle -> send back info/data to the browser
-    
-    Note: A response method call is required for every request otherwise the server will "hang" and timeout after 30-60 seconds
-*/
-
 
 // "Home" route, the main page of the program 
 

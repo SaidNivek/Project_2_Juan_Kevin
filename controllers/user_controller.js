@@ -12,35 +12,9 @@ const router = express.Router()
 // MODELS
 const db = require('../models')
 
-// express.Router breakdown 
-// incoming request to: http://localhost:5000/user
-// in server.js we have the following code - app.use('/user', user_controller)
-
-// the user controller's express.Router will then take on processing the request: 
-
-// app.use passes the request {} to the user_controller.js module
-// the request evaluates the available routes in the module
-// if a matching URL path is found, that route's callback is executed
-// otherwise, the remaining routes in server.js (after the middleware) will execute
-
 // ===================================
 /*  Beginning of User routes */
 // ===================================
-
-//Don't thibk we need this code, commenting out to check to ensure we don't
-// get all user route (same as home page)
-// router.get('/', async (req, res, next) => {
-//     try {
-//         const products = await db.Product.find({});
-//         const context = { products }
-//         console.log(products);
-//         return res.render('index.ejs', context);
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// });
 
 // User "new" route - GET request- displays form for creating a new user
 router.get('/new', (req, res) => {
@@ -48,7 +22,7 @@ router.get('/new', (req, res) => {
 })
 
 // User "show" route - GET request - display photos from one user
-router.get('/:id/', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     try {
         const foundUser = await db.User.findById(req.params.id)
         const allPhotos = await db.Photo.find({user: req.params.id})
@@ -69,7 +43,6 @@ router.get('/:id/', async (req, res, next) => {
 router.get('/:_id/edit', async (req,res, next)=>{
     try {
         const updatedUser = await db.User.findById(req.params._id);
-        console.log(updatedUser);
         const context = {
             user: updatedUser
         }
@@ -81,17 +54,10 @@ router.get('/:_id/edit', async (req,res, next)=>{
     }
 })
 
-
-
-
-
-
 // User "create" route - POST request -> request body (new user data)
 router.post('/', async (req, res, next) => {
     try {
-        // console.log(`The req.body is ${req.body}`)
         const createdUser = await db.User.create(req.body);
-        console.log(`The created User is ${createdUser}`)
         res.redirect('/');
     } catch (error) {
         console.log(error);
@@ -105,7 +71,6 @@ router.delete('/:id', async (req,res, next)=>{
     try {
         const deletedUser = await db.User.findByIdAndDelete(req.params.id);
         const deletedPhotos = await db.Photo.deleteMany({user: req.params.id})
-        console.log(deletedPhotos)
         return res.redirect('/')
     } catch (error) {
         console.log(error);
@@ -118,7 +83,6 @@ router.delete('/:id', async (req,res, next)=>{
 router.put('/:id', async (req, res, next)=>{
     try {
         const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body);
-        console.log(updatedUser);
         return res.redirect(`./${req.params.id}`)
     } catch (error) {
         console.log(error);
