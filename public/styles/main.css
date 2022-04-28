@@ -64,6 +64,7 @@ h2 {
 .delete-button {
     background-color: red;
     color: white;
+    margin-bottom: 50px;
 }
 img {
     width: 30vw;

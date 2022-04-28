@@ -8,7 +8,7 @@
         <%- include('../partials/nav.ejs') %>
 
     <section>
-        <h2>testing image show route</h2>        
+        <h2>look 👀</h2>        
             <div>
                 <section>
                     <div picture-grid-div>                      
@@ -17,6 +17,9 @@
                             </div>              
                     </div>
                 </section>
+                <!-- <div>
+                    <input type="submit" value="Edit Comment: <%= onePhoto.name%>"/>
+                </div> -->
 
                 <div>
                     <form method="POST" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">

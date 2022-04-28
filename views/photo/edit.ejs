@@ -6,13 +6,15 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-    <h1> Change Profile Picture | <%= user.username%></h1></h1>
 
     <div> 
         <form method="POST" action="/user/<%=user._id%>?_method=PUT">
         <div>
             <label>Photo image</label>
             <input type="text" name="image" value="<%= photo.image%>"/>
+        </div>
+        <div>
+            <input type="submit" value="Update Profile: <%= user.name%>"/>
         </div>
     </div>  
 

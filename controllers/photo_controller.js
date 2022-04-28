@@ -69,13 +69,35 @@ router.get('/:_id/edit', async (req,res, next)=>{
         const context = {
             user: updatedPhoto
         }
-        return res.render('../views/photo/edit.ejs', context)
+        return res.render('../views/photo/edit', context)
     } catch (error) {
         console.log(error);
         req.error = error;
         return next();
     }
 })
+
+router.get('/:_id/edit', async (req,res, next)=>{
+    try {
+        const updatedUser = await db.User.findById(req.params._id);
+        const context = {
+            user: updatedUser
+        }
+        return res.render('../views/user/edit.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+
+
+
+
+
+
+
 
 /// delete and destroy route
 router.delete('/:id', async (req,res, next)=>{
