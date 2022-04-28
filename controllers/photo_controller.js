@@ -91,14 +91,6 @@ router.get('/:_id/edit', async (req,res, next)=>{
     }
 })
 
-
-
-
-
-
-
-
-
 /// delete and destroy route
 router.delete('/:id', async (req,res, next)=>{
     try {
@@ -106,9 +98,9 @@ router.delete('/:id', async (req,res, next)=>{
         console.log('================================')
         console.log(userId._id)
         const user = userId._id;
-        const context = {
-            oneUser: user,
-        }
+        // const context = {
+        //     oneUser: user,
+        // }
         const deletedPhoto = await db.Photo.findByIdAndDelete(req.params.id);
         // console.log(deletedPhoto);
         return res.redirect(`/`)
@@ -118,5 +110,8 @@ router.delete('/:id', async (req,res, next)=>{
         return next();
     }
 })
+
+
+
 
 module.exports = router
