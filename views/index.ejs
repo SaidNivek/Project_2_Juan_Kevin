@@ -16,6 +16,18 @@
                     </div>
                     <div>
                         <h2><%= users[i].username %></h2>
+                    
+                    </div>
+
+                    <% for (let i = 0; i < users.length; i ++) { %>
+                        <a href="/user/show/<%= users[i]._id %>">
+                            <div>
+                                <img src="<%= users.image %>" alt="an image" />
+                            </div>
+                        </a>
+                   <% } %>
+
+
                     </div>
                 </div>
             </a>            

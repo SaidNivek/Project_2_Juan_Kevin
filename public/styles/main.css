@@ -6,7 +6,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #E5E6EA;
+    /* background-color: #E5E6EA; */
+    background-color: #F8F0E3;
 }
 
 h1 {

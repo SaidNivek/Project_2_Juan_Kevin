@@ -21,6 +21,8 @@ router.get('/new', (req, res) => {
     res.render('../views/user/new.ejs')
 })
 
+
+
 // User "show" route - GET request - display photos from one user
 router.get('/:id', async (req, res, next) => {
     try {
@@ -38,6 +40,11 @@ router.get('/:id', async (req, res, next) => {
         return next();
     }
 })
+
+
+
+
+
 
 // User "edit" route - GET request - display an edit form for one user
 router.get('/:_id/edit', async (req,res, next)=>{
@@ -78,6 +85,8 @@ router.delete('/:id', async (req,res, next)=>{
         return next();
     }
 })
+
+
 
 // User "UPDATE" route - PUT request - update the User database and redirects to show route
 router.put('/:id', async (req, res, next)=>{
