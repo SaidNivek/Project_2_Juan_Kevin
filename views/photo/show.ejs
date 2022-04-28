@@ -28,6 +28,9 @@
                     <form method="POST" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
                         <input class="delete-button" type="submit" value="Delete Picture"/>
                     </form>
+                    <div>
+                        <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button>Add a Comment!</button></a>
+                    </div>
                 </div>
              </div>         
     </section> 
