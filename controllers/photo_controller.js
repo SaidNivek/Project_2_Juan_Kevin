@@ -21,10 +21,12 @@ router.get('/:id/', async (req, res, next) => {
     try {
         const foundPhoto = await db.Photo.findById(req.params.id)
         const allPhotos = await db.Photo.find({photo: req.params.id})
-        // console.log(allReviews.length, 'Reviews Found');
+        const allComments = await db.Comment.find({photo: req.params.id})
+        console.log(allComments.length, 'Comments Found');
         const context = { 
             onePhoto: foundPhoto,
             photos: allPhotos,
+            comments: allComments,
         }
         return res.render('../views/photo/show.ejs', context)
     } catch (error) {
@@ -90,14 +92,6 @@ router.get('/:_id/edit', async (req,res, next)=>{
         return next();
     }
 })
-
-
-
-
-
-
-
-
 
 /// delete and destroy route
 router.delete('/:id', async (req,res, next)=>{
