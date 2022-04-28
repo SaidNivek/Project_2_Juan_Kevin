@@ -32,9 +32,9 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 // CONTROLLERS 
-app.use('/user', controllers.user) // "user" router
-app.use('/user/photos/', controllers.photo) // photo router
 app.use('/user/photos/comments', controllers.comment)
+app.use('/user/photos/', controllers.photo) // photo router
+app.use('/user', controllers.user) // "user" router
 
 // "Home" route, the main page of the program 
 
