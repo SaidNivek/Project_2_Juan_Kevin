@@ -11,6 +11,7 @@ const router = express.Router()
 
 // MODELS
 const db = require('../models')
+const { route } = require('./photo_controller')
 
 // ===================================
 /*  Beginning of Comment routes */
@@ -19,7 +20,10 @@ const db = require('../models')
 // Comment SHOW route
 router.get('/:id', async (req, res, next) => {
     try {
-        const allComments = await db.
+        const allComments = await db.Comment.findById(req.params.id)
+        context = {
+            comments: allComments,
+        }
         res.render('../views/comment/show.ejs', context)
     } catch (error) {
         console.log(error);
@@ -29,6 +33,17 @@ router.get('/:id', async (req, res, next) => {
 })
 
 // Comment NEW route
+router.get('/new/:id', async (req, res, next) => {
+    try { 
+        const thePhoto = await db.Photo.findById(req.params.id)
+        const context = { photo: thePhoto }
+        res.render('../views/comment/new.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 // Comment EDIT route
 
