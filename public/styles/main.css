@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -26,11 +28,26 @@ h2 {
     gap: 20px;
 }
 
-.main-page-user, .form, .form-input, .comment-div {
+
+.small-user-image {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 25px;
+}
+
+.main-page-user, .form, .form-input {
     width: 25vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.comment-div {
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgrey;
 }
 
 .form, .form-input {

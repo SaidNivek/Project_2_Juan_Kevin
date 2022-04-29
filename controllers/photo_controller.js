@@ -20,7 +20,7 @@ const db = require('../models')
 // Photo SHOW route
 router.get('/:id/', async (req, res, next) => {
     try {
-        const foundPhoto = await db.Photo.findById(req.params.id)
+        const foundPhoto = await db.Photo.findById(req.params.id).populate('user')
         const allPhotos = await db.Photo.find({photo: req.params.id})
         const allComments = await db.Comment.find({photo: req.params.id})
         const context = { 
