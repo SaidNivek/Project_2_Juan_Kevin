@@ -7,12 +7,11 @@
         
         <%- include('../partials/nav.ejs') %>
 
-    <section>
+    <section class="container flex">
         <a href="/user/<%= onePhoto.user._id %>">
             <img class="small-user-image" src="<%= onePhoto.user.image %>" alt="<%= onePhoto.user.username %>'s image">
             <%= onePhoto.user.username %>
         </a>
-        <h2>look 👀</h2>
             <div>
                 <section>
                     <div picture-grid-div>                      
@@ -22,7 +21,7 @@
                     </div>
                 </section>
                 <div>
-                    <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button>Add a Comment!</button></a>
+                    <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button class="button is-info">Add a Comment!</button></a>
                 </div>
                 <div>
                     <p>Comments:</p>
@@ -31,7 +30,7 @@
                         <div class="comment-div">                            
                             <p><%= comments[i].comment %></p>
                             <form method="POST" action="/user/photos/comments/<%=comments[i]._id%>?_method=DELETE">
-                                <input class="delete-button" type="submit" value="Delete Comment"/>
+                                <input class="button is-warning is-small" type="submit" value="Delete Comment"/>
                             </form>
                         </div>
                     <% } %>
@@ -41,7 +40,7 @@
                 </div> -->                
                 <div>
                     <form method="POST" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
-                        <input class="delete-button" type="submit" value="Delete Picture"/>
+                        <input class="button is-danger is-small" type="submit" value="Delete Picture"/>
                     </form>
                 </div>
              </div>         

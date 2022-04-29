@@ -6,7 +6,7 @@
 <body> 
     <%- include('../partials/nav.ejs') %>
 
-    <main class="container">  
+    <main class="container flex user">  
         <div class="main-page-user">
             <div>
                 <img class="small-user-image" src="<%= oneUser.image %>" alt="Picture of <%= oneUser.username %>">
@@ -15,15 +15,11 @@
                 <h2><%= oneUser.username %></h2>
             </div>
         </div>         
-        <a href="/user/<%= oneUser._id %>/edit"><button>Click here to change your profile picture</button></a>
+        <a href="/user/<%= oneUser._id %>/edit"><button class="button is-primary">Click here to change your profile picture</button></a>
         <div>
-        <a href="/user/photos/new/<%= oneUser._id %>"><button>Upload a Picture!</button></a>
+        <a href="/user/photos/new/<%= oneUser._id %>"><button class="button is-info">Upload a Picture!</button></a>
         </div>
-        <div>
-            <form method="POST" action="/user/<%=oneUser._id%>?_method=DELETE">
-                <input class="button delete-button" type="submit" value="Delete Profile"/>
-            </form>
-        </div>
+
 
         <section>
             <div picture-grid-div>
@@ -37,6 +33,12 @@
             <% } %>
             </div>
         </section>
+
+        <div>
+            <form method="POST" action="/user/<%=oneUser._id%>?_method=DELETE">
+                <input class="button is-danger is-small" type="submit" value="Delete Profile"/>
+            </form>
+        </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>

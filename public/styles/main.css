@@ -17,20 +17,27 @@ a:active {
 }
 
 footer {
-  position: absolute;
-  left: 50%;
-  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
 }
 footer a {
   margin: 1rem;
 }
 footer img {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 25px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
 }
 
-.medium-user-image {
+.container.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container.flex .user-image {
   width: 10rem;
   height: 10rem;
   border-radius: 25px;
