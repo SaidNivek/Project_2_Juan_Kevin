@@ -7,23 +7,27 @@
  
     <%- include('partials/nav.ejs') %>
 
-    <main class="container">  
+    <main class="container flex">  
         <% for (let i = 0; i < users.length; i++)  { %>
-            <a class="link" href="/user/<%= users[i]._id %>">
-                <div class="main-page-user">
-                    <div>
-                        <img class="user-image" src="<%= users[i].image %>" alt="Picture of <%= users[i].username %>">
-                    </div>
+            <a href="/user/<%= users[i]._id %>">
+                <div>
                     <div>
                         <h2><%= users[i].username %></h2>
                     </div>
+                    <div>
+                        <img class="user-image" src="<%= users[i].image %>" alt="Picture of <%= users[i].username %>">
+                    </div>
+
                 </div>
             </a>            
         <% } %>
 
-        <a href="/user/new"><button>Make a new user account</button></a>
+        <a href="/user/new"><button class="button is-primary">Make a new user account</button></a>
 
     </main>
+
+    <%- include('partials/footer.ejs') %>
+
 </body>
 
 </html> 

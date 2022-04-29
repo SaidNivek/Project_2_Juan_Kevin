@@ -1,88 +1,143 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #E5E6EA;
+  background-color: #F5F5F5;
 }
 
-h1 {
-    font-size: 4rem;
+a {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: #00d1b2;
+  opacity: 0.7;
+}
+a:active {
+  color: black;
 }
 
-h2 {
-    font-size: 3rem;
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+footer a {
+  margin: 1rem;
+}
+footer img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
 }
 
-.main-page-title {
-    width: 90vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px;
+nav .navbar-end {
+  gap: 2px;
+  margin-top: 3px;
+  margin-right: 3px;
 }
 
+.container.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container.flex .user-image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 25px;
+}
+
+.main-page-user {
+  margin: 5px;
+}
+.main-page-user .small-user-image {
+  width: 8vw;
+  height: 8vw;
+}
+.main-page-user .user-div {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  top: 10%;
+  left: 2%;
+}
+.main-page-user .user-div div {
+  margin-bottom: 3px;
+}
+
+.container.flex.user main, .container.flex.user div {
+  margin-bottom: 5px;
+}
+.container.flex.user img {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 15px;
+  box-shadow: 5px 5px grey;
+}
+.container.flex.user .photo-caption-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container.flex.user .photo-caption-div img {
+  margin-bottom: 10px;
+}
+.container.flex.user .photo-caption-div p {
+  font-size: 1.3rem;
+}
+
+.container.show-photo .return-image {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 25px;
+  margin-top: 2rem;
+}
+.container.show-photo .photo-show-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container.show-photo h2 {
+  font-size: 1.5rem;
+}
+.container.show-photo img {
+  border-radius: 15px;
+  max-width: 25vw;
+}
+.container.show-photo section {
+  width: 75vw;
+}
+.container.show-photo .container {
+  width: 30vw;
+}
+.container.show-photo .username {
+  font-size: 1.3em;
+}
+.container.show-photo .comment-div, .container.show-photo .comment {
+  background-color: white;
+  border: 1px solid grey;
+  box-shadow: 3px 3px grey;
+  padding: 5px;
+  margin: 5px 15px;
+}
+.container.show-photo p {
+  font-size: 1.2rem;
+}
+.container.show-photo .comment {
+  background-color: #F5F5F5;
+}
 
 .small-user-image {
-    width: 3vw;
-    height: 3vw;
-    border-radius: 25px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 25px;
 }
 
-.main-page-user, .form, .form-input {
-    width: 25vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.comment-div {
-    width: 25vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid lightgrey;
-}
-
-.form, .form-input {
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 5px;
-}
-
-.user-image {
-    border-radius: 50%;
-    width: 8vw;
-    height: 8vw;
-}
-
-.link {
-    text-decoration: none;
-    color: black;
-}
-
-.link:visited {
-    color: black;
-}
-
-.link:hover {
-    color: blue;
-}
-
-.link:active {
-    color: black;
-}
-
-.delete-button {
-    background-color: red;
-    color: white;
-    margin-bottom: 50px;
-}
-img {
-    width: 30vw;
-}
+/*# sourceMappingURL=main.css.map */
