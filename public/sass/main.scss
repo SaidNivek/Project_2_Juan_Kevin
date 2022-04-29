@@ -1,0 +1,36 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+body{
+    background-color: #F5F5F5;
+}
+
+a {
+    color: black;
+    &:visited {
+        color: black;
+    }
+    &:hover {
+        color: green;
+    }
+    &:active {
+        color: yellow;
+    }
+}
+
+.footer-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 25px;
+}
+
+.medium-user-image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 25px;
+}
+
+.small-user-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 25px;
+}

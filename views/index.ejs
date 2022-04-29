@@ -12,7 +12,7 @@
             <a class="link" href="/user/<%= users[i]._id %>">
                 <div class="main-page-user">
                     <div>
-                        <img class="user-image" src="<%= users[i].image %>" alt="Picture of <%= users[i].username %>">
+                        <img class="medium-user-image" src="<%= users[i].image %>" alt="Picture of <%= users[i].username %>">
                     </div>
                     <div>
                         <h2><%= users[i].username %></h2>
@@ -21,9 +21,12 @@
             </a>            
         <% } %>
 
-        <a href="/user/new"><button>Make a new user account</button></a>
+        <a href="/user/new"><button class="button is-primary">Make a new user account</button></a>
 
     </main>
+
+    <%- include('partials/footer.ejs') %>
+
 </body>
 
 </html> 

@@ -6,39 +6,40 @@
 <body> 
     <%- include('../partials/nav.ejs') %>
 
-<main class="container">  
-    <div class="main-page-user">
+    <main class="container">  
+        <div class="main-page-user">
+            <div>
+                <img class="small-user-image" src="<%= oneUser.image %>" alt="Picture of <%= oneUser.username %>">
+            </div>
+            <div>
+                <h2><%= oneUser.username %></h2>
+            </div>
+        </div>         
+        <a href="/user/<%= oneUser._id %>/edit"><button>Click here to change your profile picture</button></a>
         <div>
-            <img class="user-image" src="<%= oneUser.image %>" alt="Picture of <%= oneUser.username %>">
+        <a href="/user/photos/new/<%= oneUser._id %>"><button>Upload a Picture!</button></a>
         </div>
         <div>
-            <h2><%= oneUser.username %></h2>
+            <form method="POST" action="/user/<%=oneUser._id%>?_method=DELETE">
+                <input class="button delete-button" type="submit" value="Delete Profile"/>
+            </form>
         </div>
-    </div>         
-    <a href="/user/<%= oneUser._id %>/edit"><button>Click here to change your profile picture</button></a>
-    <div>
-       <a href="/user/photos/new/<%= oneUser._id %>"><button>Upload a Picture!</button></a>
-    </div>
-    <div>
-        <form method="POST" action="/user/<%=oneUser._id%>?_method=DELETE">
-            <input class="delete-button" type="submit" value="Delete Profile"/>
-        </form>
-    </div>
 
-    <section>
-        <div picture-grid-div>
-            <% for (let i = 0; i < photos.length; i ++) { %>
-                <a href="/user/photos/<%= photos[i]._id %>">
-                    <div>
-                        <img src="<%= photos[i].image %>" alt="an image" />
-                        <p><%= photos[i].caption %></p>
-                    </div>
-                </a>
-           <% } %>
-        </div>
-    </section>
-</main>
+        <section>
+            <div picture-grid-div>
+                <% for (let i = 0; i < photos.length; i ++) { %>
+                    <a href="/user/photos/<%= photos[i]._id %>">
+                        <div>
+                            <img src="<%= photos[i].image %>" alt="an image" />
+                            <p><%= photos[i].caption %></p>
+                        </div>
+                    </a>
+            <% } %>
+            </div>
+        </section>
+    </main>
 
+    <%- include('../partials/footer.ejs') %>
 
 </body>
 

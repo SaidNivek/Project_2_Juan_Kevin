@@ -1,86 +1,37 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #E5E6EA;
+  background-color: #F5F5F5;
 }
 
-h1 {
-    font-size: 4rem;
+a {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: green;
+}
+a:active {
+  color: yellow;
 }
 
-h2 {
-    font-size: 3rem;
+.footer-img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 25px;
 }
 
-.main-page-title {
-    width: 90vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px;
+.medium-user-image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 25px;
 }
-
 
 .small-user-image {
-    width: 3vw;
-    height: 3vw;
-    border-radius: 25px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 25px;
 }
 
-.main-page-user, .form, .form-input {
-    width: 25vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.comment-div {
-    width: 25vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid lightgrey;
-}
-
-.form, .form-input {
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 5px;
-}
-
-.user-image {
-    border-radius: 50%;
-    width: 8vw;
-    height: 8vw;
-}
-
-.link {
-    text-decoration: none;
-    color: black;
-}
-
-.link:visited {
-    color: black;
-}
-
-.link:hover {
-    color: blue;
-}
-
-.link:active {
-    color: black;
-}
-
-.delete-button {
-    background-color: red;
-    color: white;
-    margin-bottom: 50px;
-}
-img {
-    width: 30vw;
-}
+/*# sourceMappingURL=main.css.map */
