@@ -25,18 +25,24 @@
             <a href="/user/photos/new/<%= oneUser._id %>"><button class="button is-info">Upload a Picture!</button></a>
         </div>
 
-    <section>
+        <section>
+        </div>
         <div picture-grid-div>
-          
             <% for (let i = 0; i < photos.length; i ++) { %>
-                <a href="/user/photos/<%= photos[i]._id %>">
-                    <div>
-                        <img src="<%= photos[i].image %>" alt="an image" />
-                        <p><%= photos[i].caption %></p>
+                <% if(i % 3 === 0) { %>
+                    <div class="columns">
+                <% } %>
+                <div class="column">
+                    <a href="/user/photos/<%= photos[i]._id %>">
+                        <div class="photo-caption-div">
+                            <img src="<%= photos[i].image %>" alt="an image" />
+                        </div>
+                    </a>
+                </div>
+                <% if(i % 3 === 2) { %>
                     </div>
-                   
-                </a>
-           <% } %>
+                <% } %>
+        <% } %>
         </div>
     </section>
 </main>
