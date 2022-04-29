@@ -36,15 +36,23 @@ app.use('/user/photos/comments', controllers.comment)
 app.use('/user/photos/', controllers.photo) // photo router
 app.use('/user', controllers.user) // "user" router
 
-// "Home" route, the main page of the program 
 
+
+
+// "Home" route, the main page of the program 
 app.get('/', async (req, res, next) => {
     try {
         const users = await db.User.find({})
+        const allPhotos = await db.Photo.find({}).populate('user')
+        const sortPhotos = allPhotos.sort((a,b) => {
+            b.createdAt - a.createdAt
+        })
         context = {
-            users
+            users,
+            
+            photos: sortPhotos
         }
-        console.log(users)
+        console.log(sortPhotos)
         res.render('index.ejs', context)
     } catch (error) {
         console.log(error);
@@ -52,6 +60,21 @@ app.get('/', async (req, res, next) => {
         return next();
     }
 })
+
+// // get all products route
+// router.get('/', async (req, res, next) => {
+//     try {
+//         // if(!req.session) res.redirect('/login')
+//         const image = await db.image.find({});
+//         const context = { image }
+//         console.log(image);
+//         return res.render('index.ejs', context);
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// });
 
 /* 
     EXPRESS Server: initializes the server; app.listen allows your computer to receive requests at http://localhost:4000/ 

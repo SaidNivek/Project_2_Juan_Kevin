@@ -16,6 +16,7 @@ const db = require('../models')
 /*  Beginning of Photo routes */
 // ===================================
 
+
 // Photo SHOW route
 router.get('/:id/', async (req, res, next) => {
     try {
@@ -94,6 +95,13 @@ router.get('/:_id/edit', async (req,res, next)=>{
 /// delete and destroy route
 router.delete('/:id', async (req,res, next)=>{
     try {
+        const userId = await db.Photo.findById(req.params.id).populate("user")
+        console.log('================================')
+        console.log(userId._id)
+        const user = userId._id;
+        // const context = {
+        //     oneUser: user,
+        // }
         const deletedPhoto = await db.Photo.findByIdAndDelete(req.params.id);
         const deletedComments = await db.Comment.deleteMany({photo: req.params.id})
         return res.redirect(`/user/${deletedPhoto.user}`)
@@ -103,5 +111,8 @@ router.delete('/:id', async (req,res, next)=>{
         return next();
     }
 })
+
+
+
 
 module.exports = router

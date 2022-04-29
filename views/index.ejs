@@ -2,27 +2,41 @@
 <html lang="en">
 
     <%- include('partials/head.ejs',{ pageName :  "Home" }) %>
+    <%- include('partials/head.ejs', { pageName: context.image }) %>
 
 <body> 
  
     <%- include('partials/nav.ejs') %>
 
-    <main class="container flex">  
-        <% for (let i = 0; i < users.length; i++)  { %>
-            <a href="/user/<%= users[i]._id %>">
-                <div>
+    <main class="container">  
+        <% for (let i = 0; i < photos.length; i++)  { %>
+            <a class="link" href="/user/<%= photos[i].user._id %>">
+                <div class="main-page-user">
                     <div>
-                        <h2><%= users[i].username %></h2>
+                        <img class="user-image" src="<%= photos[i].user.image %>" alt="Picture of <%= photos[i].user.username %>">
                     </div>
                     <div>
-                        <img class="user-image" src="<%= users[i].image %>" alt="Picture of <%= users[i].username %>">
+                        <h2><%= photos[i].user.username %></h2>
+
+                        <!-- <img src="https://placekitten.com/200/287"> -->
                     </div>
+
+                    <div>
+                        <img src="<%= photos[i].image %>">
+                    </div>
+                    
+                  
+
+
 
                 </div>
             </a>            
         <% } %>
 
-        <a href="/user/new"><button class="button is-primary">Make a new user account</button></a>
+     
+
+
+        <a href="/user/new"><button>Make a new user account</button></a>
 
     </main>
 

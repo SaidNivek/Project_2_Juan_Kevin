@@ -39,6 +39,7 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
+
 // User "edit" route - GET request - display an edit form for one user
 router.get('/:_id/edit', async (req,res, next)=>{
     try {
@@ -79,6 +80,8 @@ router.delete('/:id', async (req,res, next)=>{
         return next();
     }
 })
+
+
 
 // User "UPDATE" route - PUT request - update the User database and redirects to show route
 router.put('/:id', async (req, res, next)=>{
