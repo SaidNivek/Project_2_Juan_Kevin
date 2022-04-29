@@ -7,44 +7,51 @@
         
         <%- include('../partials/nav.ejs') %>
 
-    <section class="container flex">
-        <a href="/user/<%= onePhoto.user._id %>">
-            <img class="small-user-image" src="<%= onePhoto.user.image %>" alt="<%= onePhoto.user.username %>'s image">
-            <%= onePhoto.user.username %>
-        </a>
-            <div>
-                <section>
-                    <div picture-grid-div>                      
-                            <div>
-                                <img src="<%= onePhoto.image %>" alt="an image" />                                    
-                            </div>              
-                    </div>
-                </section>
-                <div>
-                    <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button class="button is-info">Add a Comment!</button></a>
-                </div>
-                <div>
-                    <p>Comments:</p>
-                    <% for (let i = 0; i < comments.length; i++) { %>
-                        <p><%= comments[i].username %> commented:</p>
-                        <div class="comment-div">                            
-                            <p><%= comments[i].comment %></p>
-                            <form method="POST" action="/user/photos/comments/<%=comments[i]._id%>?_method=DELETE">
-                                <input class="button is-warning is-small" type="submit" value="Delete Comment"/>
-                            </form>
+    <main>
+        <section class="container show-photo">
+                <a href="/user/<%= onePhoto.user._id %>">
+                    <img class="return-image" src="<%= onePhoto.user.image %>" alt="<%= onePhoto.user.username %>'s image">
+                </a>
+                <div class="container flex">
+                    <section>
+                        <div class="photo-show-div">                      
+                                <div>
+                                    <img src="<%= onePhoto.image %>" alt="an image" />                                    
+                                </div>    
+                                <div>
+                                    <h2><%= onePhoto.caption %></h2>
+                                </div>          
+                                <div>
+                                    <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button class="button is-info is-small">Add a Comment!</button></a>
+                                </div>
                         </div>
-                    <% } %>
-                </div>
-                <!-- <div>
-                    <input type="submit" value="Edit Comment: <%= onePhoto.name%>"/>
-                </div> -->                
-                <div>
-                    <form method="POST" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
-                        <input class="button is-danger is-small" type="submit" value="Delete Picture"/>
-                    </form>
-                </div>
-             </div>         
-    </section> 
+                    </section>
+                </div>         
+                    <div class="container">
+                        <h2>Comments:</h2>
+                        <% for (let i = 0; i < comments.length; i++) { %>
+                            <div class="comment-div">
+                                <p class="username"><span class="has-text-weight-semibold"><%= comments[i].username %></span> commented:</p>
+                                <div class="comment">                            
+                                    <p><%= comments[i].comment %></p>
+                                    <form class="buttons is-right" method="POST" action="/user/photos/comments/<%=comments[i]._id%>?_method=DELETE">
+                                        <input class="button is-warning is-small" type="submit" value="Delete Comment"/>
+                                    </form>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                    <!-- <div>
+                        <input type="submit" value="Edit Comment: <%= onePhoto.name%>"/>
+                    </div> -->                
+                    <div class="buttons is-centered">
+                        <form method="POST" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
+                            <input class="button is-danger is-small" type="submit" value="Delete Picture"/>
+                        </form>
+                    </div>
+        </section> 
+    </main>
+
     <%- include('../partials/footer.ejs') %>
 </body>
 

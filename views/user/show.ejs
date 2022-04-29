@@ -6,39 +6,47 @@
 <body> 
     <%- include('../partials/nav.ejs') %>
 
+    <div class="main-page-user">
+        <div class="user-div">
+            <img class="small-user-image" src="<%= oneUser.image %>" alt="Picture of <%= oneUser.username %>">
+            <h2><%= oneUser.username %></h2>
+            <div>
+                <a href="/user/<%= oneUser._id %>/edit"><button class="button is-primary is-small">Click here to change your profile picture</button></a>
+            </div>      
+            <div>
+                <form method="POST" action="/user/<%=oneUser._id%>?_method=DELETE">
+                    <input class="button is-danger is-small" type="submit" value="Delete Profile"/>
+                </form>
+            </div>
+        </div>
+    </div>   
     <main class="container flex user">  
-        <div class="main-page-user">
-            <div>
-                <img class="small-user-image" src="<%= oneUser.image %>" alt="Picture of <%= oneUser.username %>">
-            </div>
-            <div>
-                <h2><%= oneUser.username %></h2>
-            </div>
-        </div>         
-        <a href="/user/<%= oneUser._id %>/edit"><button class="button is-primary">Click here to change your profile picture</button></a>
         <div>
-        <a href="/user/photos/new/<%= oneUser._id %>"><button class="button is-info">Upload a Picture!</button></a>
+            <a href="/user/photos/new/<%= oneUser._id %>"><button class="button is-info">Upload a Picture!</button></a>
         </div>
 
 
         <section>
+            </div>
             <div picture-grid-div>
                 <% for (let i = 0; i < photos.length; i ++) { %>
-                    <a href="/user/photos/<%= photos[i]._id %>">
-                        <div>
-                            <img src="<%= photos[i].image %>" alt="an image" />
-                            <p><%= photos[i].caption %></p>
+                    <% if(i % 3 === 0) { %>
+                        <div class="columns">
+                    <% } %>
+                    <div class="column">
+                        <a href="/user/photos/<%= photos[i]._id %>">
+                            <div class="photo-caption-div">
+                                <img src="<%= photos[i].image %>" alt="an image" />
+                            </div>
+                        </a>
+                    </div>
+                    <% if(i % 3 === 2) { %>
                         </div>
-                    </a>
+                    <% } %>
             <% } %>
             </div>
         </section>
 
-        <div>
-            <form method="POST" action="/user/<%=oneUser._id%>?_method=DELETE">
-                <input class="button is-danger is-small" type="submit" value="Delete Profile"/>
-            </form>
-        </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>
