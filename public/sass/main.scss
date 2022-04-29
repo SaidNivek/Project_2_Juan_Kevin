@@ -17,10 +17,24 @@ a {
     }
 }
 
-.footer-img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 25px;
+footer{
+
+    // @mixin until()
+
+    position: absolute;
+    left: 50%;
+    margin-top: .5rem;
+
+    a {
+        margin: 1rem;
+    }
+
+    img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 25px;
+    }
+
 }
 
 .medium-user-image {

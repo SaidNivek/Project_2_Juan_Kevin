@@ -16,7 +16,15 @@ a:active {
   color: yellow;
 }
 
-.footer-img {
+footer {
+  position: absolute;
+  left: 50%;
+  margin-top: 0.5rem;
+}
+footer a {
+  margin: 1rem;
+}
+footer img {
   width: 4rem;
   height: 4rem;
   border-radius: 25px;
