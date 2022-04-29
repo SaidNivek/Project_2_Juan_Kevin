@@ -36,22 +36,23 @@ app.use('/user/photos/comments', controllers.comment)
 app.use('/user/photos/', controllers.photo) // photo router
 app.use('/user', controllers.user) // "user" router
 
-// "Home" route, the main page of the program 
 
+
+
+// "Home" route, the main page of the program 
 app.get('/', async (req, res, next) => {
     try {
         const users = await db.User.find({})
+        const allPhotos = await db.Photo.find({}).populate('user')
+        const sortPhotos = allPhotos.sort((a,b) => {
+            b.createdAt - a.createdAt
+        })
         context = {
-            users
+            users,
+            
+            photos: sortPhotos
         }
-        console.log(users)
-
-        // // create an array 
-        // let imgArray = new Array();
-        // imgArray [0] = new Image;
-        // imgArray [0].src = ''
-
-
+        console.log(sortPhotos)
         res.render('index.ejs', context)
     } catch (error) {
         console.log(error);

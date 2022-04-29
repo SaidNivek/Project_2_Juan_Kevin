@@ -9,17 +9,26 @@
     <%- include('partials/nav.ejs') %>
 
     <main class="container">  
-        <% for (let i = 0; i < users.length; i++)  { %>
-            <a class="link" href="/user/<%= users[i]._id %>">
+        <% for (let i = 0; i < photos.length; i++)  { %>
+            <a class="link" href="/user/<%= photos[i].user._id %>">
                 <div class="main-page-user">
                     <div>
-                        <img class="user-image" src="<%= users[i].image %>" alt="Picture of <%= users[i].username %>">
+                        <img class="user-image" src="<%= photos[i].user.image %>" alt="Picture of <%= photos[i].user.username %>">
                     </div>
                     <div>
-                        <h2><%= users[i].username %></h2>
+                        <h2><%= photos[i].user.username %></h2>
+
                         <!-- <img src="https://placekitten.com/200/287"> -->
                     </div>
-    
+
+                    <div>
+                        <img src="<%= photos[i].image %>">
+                    </div>
+                    
+                  
+
+
+
                 </div>
             </a>            
         <% } %>
