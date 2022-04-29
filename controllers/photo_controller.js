@@ -16,6 +16,7 @@ const db = require('../models')
 /*  Beginning of Photo routes */
 // ===================================
 
+
 // Photo SHOW route
 router.get('/:id/', async (req, res, next) => {
     try {

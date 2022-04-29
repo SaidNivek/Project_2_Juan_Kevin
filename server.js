@@ -45,6 +45,13 @@ app.get('/', async (req, res, next) => {
             users
         }
         console.log(users)
+
+        // // create an array 
+        // let imgArray = new Array();
+        // imgArray [0] = new Image;
+        // imgArray [0].src = ''
+
+
         res.render('index.ejs', context)
     } catch (error) {
         console.log(error);
@@ -52,6 +59,21 @@ app.get('/', async (req, res, next) => {
         return next();
     }
 })
+
+// // get all products route
+// router.get('/', async (req, res, next) => {
+//     try {
+//         // if(!req.session) res.redirect('/login')
+//         const image = await db.image.find({});
+//         const context = { image }
+//         console.log(image);
+//         return res.render('index.ejs', context);
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// });
 
 /* 
     EXPRESS Server: initializes the server; app.listen allows your computer to receive requests at http://localhost:4000/ 
