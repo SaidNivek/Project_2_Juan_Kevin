@@ -81,8 +81,6 @@ router.delete('/:id', async (req,res, next)=>{
     }
 })
 
-
-
 // User "UPDATE" route - PUT request - update the User database and redirects to show route
 router.put('/:id', async (req, res, next)=>{
     try {
