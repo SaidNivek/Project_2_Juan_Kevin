@@ -82,6 +82,35 @@ nav .title {
   border-radius: 5px;
 }
 
+.container.about-us h1 {
+  font-size: 4rem;
+}
+.container.about-us h3 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+.container.about-us .creator-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.container.about-us .creator-info img {
+  border-radius: 25px;
+  width: 12rem;
+  height: 12rem;
+}
+.container.about-us .info {
+  background-color: white;
+  border: 1px solid grey;
+  box-shadow: 3px 3px grey;
+  padding: 15px;
+  margin: 5px 15px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  width: 50%;
+}
+
 .container.flex {
   display: flex;
   flex-direction: column;
