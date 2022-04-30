@@ -7,28 +7,26 @@ Login online, see user pictures and stuff, with a description.  Before logging i
 Create wireframes for end-product image. Simple sites with pictures and usernames. Get RESTful/CRUD routes established.  Create database. Work on views.  Ensure data is displayed on pages properly with dummy data. Create database.  Create Schema for users/photos. Connect the database to the code. Test for the connection. Attach routes to the databse. Work on CSS. Make sure nothing breaks.
 
 ## User Stories
-- Post pictures
-- Post comments on pictures
+As a user, I would like to:
+- Click a button to post pictures
+- Click a button to post comments on pictures
 - Have a user profile
-- Update their profiles
-- Update their pictures
-- Update their comments
-- Delete their comments
-- Delete their pictures
-- Delete their profile
-- Easily see if there are other pictures posted on a main page
-- User authentication / email sign-up
+- Update my profile picture
+- Delete my comments
+- Delete pictures that I post
+- Delete my entire profile
+- Easily see if other user pictures on a main feed
+- Sign up and login using user authentication
 
 ## MVP Goals
-- Post pictures
-- Post comments on pictures
+- Click a button to post pictures
+- Click a button to post comments on pictures
 - Have a user profile
-- Update their profiles
-- Update their pictures
-- Update their comemnts
-- Delete their comments
-- Delete their pictures
-- Delete their profile
+- Update my profile picture
+- Delete my comments
+- Delete pictures that I post
+- Delete my entire profile
+- Easily see if other user pictures on a main feed
 
 ## Stretch Goals
 - Easily see if there are other pictures posted on a main page
@@ -46,9 +44,6 @@ Create wireframes for end-product image. Simple sites with pictures and username
 
 ### ERD
 ![image](https://user-images.githubusercontent.com/89223981/165361396-6e5de115-d953-42d4-a458-6fa232c6113e.png)
-
-
-
 
 ## Installation Instructions
 
