@@ -1,7 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 body {
   background-color: #F5F5F5;
-  height: 100vh;
 }
 
 a {
@@ -37,6 +36,37 @@ nav .navbar-end {
   gap: 2px;
   margin-top: 3px;
   margin-right: 3px;
+}
+
+.container.main-page .main-page-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.container.main-page .main-page-user h2 {
+  font-size: 2rem;
+}
+.container.main-page .main-page-user img {
+  border-radius: 25px;
+  width: 7rem;
+  height: 7rem;
+}
+.container.main-page .main-page-photo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container.main-page .main-page-photo h2 {
+  font-size: 2rem;
+}
+.container.main-page .main-page-photo img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 25px;
+}
+.container.main-page .main-page-photo a {
+  width: 50%;
+  margin-left: 8rem;
 }
 
 .container.flex {

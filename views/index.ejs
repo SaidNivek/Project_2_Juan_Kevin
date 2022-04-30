@@ -8,26 +8,29 @@
  
     <%- include('partials/nav.ejs') %>
 
-    <main class="container">  
+    <main class="container main-page">  
         <% for (let i = 0; i < photos.length; i++)  { %>
-            <a class="link" href="/user/<%= photos[i].user._id %>">
-                <div class="main-page-user">
-                    <div>
-                        <img class="user-image" src="<%= photos[i].user.image %>" alt="Picture of <%= photos[i].user.username %>">
+            <div class="user-and-image-div">
+                <a class="link" href="/user/<%= photos[i].user._id %>">
+                    <div class="main-page-user">                        
+                            <img class="user-image" src="<%= photos[i].user.image %>" alt="Picture of <%= photos[i].user.username %>">                        
+                            <h2><%= photos[i].user.username %></h2>                        
                     </div>
+                </a>  
+            </div>
+            <div class="main-page-photo">
+                <a href="/user/photos/<%= photos[i]._id %>">
                     <div>
-                        <h2><%= photos[i].user.username %></h2>
+                        <img src="<%= photos[i].image %>" alt="A picture with the caption <%= photos[i].caption %>">
                     </div>
-            </a>  
-            <a href="/user/photos/<%= photos[i]._id %>">
+                </a>
+                <a href="/user/photos/<%= photos[i]._id %>">
                     <div>
-                        <img src="<%= photos[i].image %>">
+                        <h2><%= photos[i].caption %></h2>                  
                     </div>
-                </div>
-            </a>
-          
-        <% } %>
-        
+                </a>          
+            </div>
+        <% } %>        
     </main>
 
     <%- include('partials/footer.ejs') %>

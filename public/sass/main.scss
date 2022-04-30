@@ -3,7 +3,6 @@
 
 body{
     background-color: #F5F5F5;
-    height: 100vh;
 }
 
 a {
@@ -45,7 +44,41 @@ nav {
     }
 }
 
-// index.ejs page CSS
+// main feed page, all user pictures, chronologically
+.container.main-page {
+    .main-page-user {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        h2 {
+            font-size: 2rem;
+        }
+        img {
+            border-radius: 25px;
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+    .main-page-photo {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        h2 {
+            font-size: 2rem;
+        }
+        img {
+            width: 20rem;
+            height: 20rem;
+            border-radius: 25px;
+        }
+        a {
+            width: 50%;
+            margin-left: 8rem;
+        }
+    }
+}
+
+// user index.ejs page CSS
 .container.flex  {
     display: flex;
     flex-direction: column;
@@ -100,7 +133,6 @@ nav {
         font-size: 1.3rem;
         }
     }
-
 }
 
 // Photo show.ejs page CSS
