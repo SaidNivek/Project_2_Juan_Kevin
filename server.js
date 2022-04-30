@@ -54,6 +54,11 @@ app.get('/', async (req, res, next) => {
     }
 })
 
+// About Us page
+app.get('/aboutus', (req, res) => {
+    res.render('./aboutus.ejs')
+})
+
 /* 
     EXPRESS Server: initializes the server; app.listen allows your computer to receive requests at http://localhost:4000/ 
 */
