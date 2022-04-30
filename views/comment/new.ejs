@@ -7,29 +7,28 @@
  
     <%- include('../partials/nav.ejs') %>
 
-
-    <h1>Add a comment to the picture!</h1>
-    <form class="form" method="POST" action="/user/photos/comments">
-
-        <div class="form-input">
-            <label for="username"> Your username: </label>
-            <input id="username" name="username" type="text" />
-        </div>
-        <div class="form-input">
-            <label for="comment"> Comment: </label>
-            <input id="comment" name="comment" type="text" />
-        </div>
-        <div class="form-input">
-            <label for="user"></label>
-            <input id="user" name="user" type="hidden" value="<%= photo.user._id %>"/>
-        </div>
-        <div class="form-input">
-            <label for="photo"></label>
-            <input id="photo" name="photo" type="hidden" value="<%= photo._id %>"/>
-        </div>
-        <input class="add-button" type="submit" value="Add Comment"/>
-    </form>
-    <%- include('../partials/footer.ejs') %>
+    <div class="field">
+        <form method="POST" action="/user/photos/comments">    
+            <h1>Add a comment to the picture!</h1>
+            <div class="form-input">
+                <label class="label" for="username"> Your username: </label>
+                <input class="input" placeholder="Enter your username" id="username" name="username" type="text" />
+            </div>
+            <div class="form-input">
+                <label class="label" for="comment"> Comment: </label>
+                <input class="input" placeholder="Enter a comment" id="comment" name="comment" type="text" />
+            </div>
+            <div class="form-input">
+                <label class="label" for="user"></label>
+                <input id="user" name="user" type="hidden" value="<%= photo.user._id %>"/>
+            </div>
+            <div class="form-input">
+                <label class="label" for="photo"></label>
+                <input id="photo" name="photo" type="hidden" value="<%= photo._id %>"/>
+            </div>
+            <input class="button is-primary" type="submit" value="Add Comment"/>
+        </form>
+    </div>
 </body>
 
 </html>

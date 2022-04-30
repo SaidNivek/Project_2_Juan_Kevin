@@ -6,18 +6,17 @@
 <body>
 
     <%- include('../partials/nav.ejs') %>
-    <h1> Change Profile Picture | <%= user.username%></h1></h1>
-
-    <div> 
+    
+    <div class="field"> 
         <form method="POST" action="/user/<%=user._id%>?_method=PUT">
+            <h1> Change Profile Picture | <%= user.username%></h1></h1>
         <div>
-            <label>Photo image</label>
-            <input type="text" name="image" value="<%= user.image%>"/>
+            <label class="label">Photo image</label>
+            <input class="input" placeholder="Enter a new profile picture" type="text" name="image" "/>
         </div>
         <div>
-            <input type="submit" value="Update Profile: <%= user.name%>"/>
+            <input class="button is-primary" type="submit" value="Update Profile Picture"/>
         </div>
     </div>  
-    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
