@@ -91,6 +91,38 @@ nav {
     }
 }
 
+// About us page CSS
+.container.about-us {
+    h1 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    .creator-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        img {
+            border-radius: 25px;
+            width: 12rem;
+            height: 12rem;
+        }
+    }
+    .info {
+        background-color: white;
+        border: 1px solid grey;
+        box-shadow: 3px 3px grey;
+        padding: 15px;
+        margin: 5px 15px;
+        border-radius: 5px; 
+        font-size: 1.5rem;      
+        width: 50%; 
+    }
+}
+
 // user index.ejs page CSS
 .container.flex  {
     display: flex;
