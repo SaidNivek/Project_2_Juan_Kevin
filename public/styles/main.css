@@ -213,4 +213,20 @@ nav .title {
   border-radius: 25px;
 }
 
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.field h1 {
+  font-size: 2rem;
+}
+.field .button {
+  margin-top: 10px;
+}
+.field .label {
+  font-size: 1.3rem;
+}
+
 /*# sourceMappingURL=main.css.map */

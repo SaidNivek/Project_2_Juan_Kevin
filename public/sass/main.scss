@@ -231,3 +231,20 @@ nav {
     height: 4rem;
     border-radius: 25px;
 }
+
+// Fields for adding new user/photo/comment and editing exisiting users/photos
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    h1 {
+        font-size: 2rem;
+    }
+    .button {
+        margin-top: 10px;
+    }
+    .label {
+        font-size: 1.3rem;
+    }
+}

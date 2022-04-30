@@ -6,23 +6,23 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-    <h1>Add a photo to your page!</h1>
-
-    <form class="form" method="POST" action="/user/photos/">          
-            <div class="form-input">
-                <label for="image"> Photo (url): </label>
-                <input id="image" name="image" type="text" />
-            </div>
-            <div class="form-input">
-                <label for="caption"> Caption: </label>
-                <input id="caption" name="caption" type="text" />
-            </div>
-            <div class="form-input">
-                <label for="user"></label>
-                <input id="user" name="user" type="hidden" value="<%= id %>"/>
-            </div>
-            <input class="add-button" type="submit" value="Add Picture"/>
-        </form>
-        <%- include('../partials/footer.ejs') %>
+    <div class="field">
+        <formmethod="POST" action="/user/photos/">          
+            <h1>Add a photo to your page!</h1>
+                <div>
+                    <label class="label" for="image"> Photo (url): </label>
+                    <input class="input" placeholder="Enter a photo url" id="image" name="image" type="text" />
+                </div>
+                <div>
+                    <label class="label" for="caption"> Caption: </label>
+                    <input class="input" placeholder="Enter a caption for the photo" id="caption" name="caption" type="text" />
+                </div>
+                <div>
+                    <label class="label" for="user"></label>
+                    <input id="user" name="user" type="hidden" value="<%= id %>"/>
+                </div>
+                <input class="button is-primary" type="submit" value="Add Picture"/>
+            </form>
+    </div>
 </body>
 </html>
