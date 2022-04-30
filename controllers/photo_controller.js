@@ -63,12 +63,12 @@ router.post('/', async (req, res, next) => {
 })
 
 // Photo EDIT route
-router.get('/:_id/edit', async (req,res, next)=>{
+router.get('/edit/:_id', async (req,res, next)=>{
     try {
-        const updatedPhoto = await db.Photo.findById(req.params._id);
+        const updatedPhoto = await db.Photo.findById(req.params._id).populate('user');
         console.log(updatedPhoto);
         const context = {
-            user: updatedPhoto
+            photo: updatedPhoto
         }
         return res.render('../views/photo/edit', context)
     } catch (error) {
@@ -78,13 +78,11 @@ router.get('/:_id/edit', async (req,res, next)=>{
     }
 })
 
-router.get('/:_id/edit', async (req,res, next)=>{
+// photo "UPDATE" route - PUT request - update the User database and redirects to show route
+router.put('/:id', async (req, res, next)=>{
     try {
-        const updatedUser = await db.User.findById(req.params._id);
-        const context = {
-            user: updatedUser
-        }
-        return res.render('../views/user/edit.ejs', context)
+        const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body);
+        return res.redirect(`./${req.params.id}`)
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -111,8 +109,5 @@ router.delete('/:id', async (req,res, next)=>{
         return next();
     }
 })
-
-
-
 
 module.exports = router

@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
     <%- include('../partials/head.ejs', { pageName: "Update Profile" }) %>
@@ -7,15 +7,16 @@
     <%- include('../partials/nav.ejs') %>
 
 
-    <div> 
-        <form method="POST" action="/user/<%=user._id%>?_method=PUT">
+    <div class="field"> 
+        <form method="POST" action="/user/<%=photo._id%>?_method=PUT">
+            <h1>Change the photo's caption</h1>
         <div>
-            <label>Photo image</label>
-            <input type="text" name="image" value="<%= photo.image%>"/>
+            <label class="label">Edit Caption</label>
+            <input class="input" placeholder="<%= photo.caption %>" type="text" name="image" "/>
         </div>
         <div>
-            <input type="submit" value="Update Profile: <%= user.name%>"/>
+            <input class="button is-primary" type="submit" value="Update Caption"/>
         </div>
     </div>  
 </body>
-</html> -->
+</html>
