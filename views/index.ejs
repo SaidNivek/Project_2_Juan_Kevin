@@ -17,15 +17,15 @@
                     </div>
                     <div>
                         <h2><%= photos[i].user.username %></h2>
-
-                        <!-- <img src="https://placekitten.com/200/287"> -->
                     </div>
-
+            </a>  
+            <a href="/user/photos/<%= photos[i]._id %>">
                     <div>
                         <img src="<%= photos[i].image %>">
                     </div>
                 </div>
-            </a>            
+            </a>
+          
         <% } %>
         
     </main>
