@@ -1,12 +1,8 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
 body {
-  /* background-color: #acd8e6; */
-  background-size: conver;
   background-image: linear-gradient(to bottom, #65a2b4, #c8e1e7);
-  
 }
-
 form {
   margin: 5px;
 }
@@ -26,11 +22,11 @@ a:active {
 }
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: red;
+    position:relative;
+    margin-bottom: 100px;
+    
 }
+
 footer a {
   margin: 1rem;
 }
@@ -239,7 +235,8 @@ nav .title {
   font-size: 2rem;
 }
 .field .button {
-  margin-top: 10px;
+margin-top: 10px;
+ margin-bottom: 100%;
 }
 .field .label {
   font-size: 1.3rem;
