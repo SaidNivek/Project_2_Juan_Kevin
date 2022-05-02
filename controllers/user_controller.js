@@ -27,7 +27,7 @@ router.get('/:id', async (req, res, next) => {
         const foundUser = await db.User.findById(req.params.id)
         const allPhotos = await db.Photo.find({user: req.params.id})
         // console.log(allReviews.length, 'Reviews Found');
-        const context = { 
+        const context = {
             oneUser: foundUser,
             photos: allPhotos,
         }

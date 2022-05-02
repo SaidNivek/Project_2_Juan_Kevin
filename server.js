@@ -39,11 +39,13 @@ app.use('/user', controllers.user) // "user" router
 // "Home" route, the main page of the program 
 app.get('/', async (req, res, next) => {
     try {
+        const allUsers = await db.User.find({})
         const allPhotos = await db.Photo.find({}).populate('user')
         const sortPhotos = allPhotos.sort((a,b) => {
             b.createdAt - a.createdAt
         })
-        context = {            
+        context = {   
+            users: allUsers,         
             photos: sortPhotos
         }
         res.render('index.ejs', context)
