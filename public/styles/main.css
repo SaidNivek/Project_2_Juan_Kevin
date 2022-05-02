@@ -50,6 +50,9 @@ nav .title {
     background-color: #a7bed3;
 }
 
+.container.main-page {
+  margin: 5px;
+}
 .container.main-page .main-page-user {
   display: flex;
   align-items: center;
