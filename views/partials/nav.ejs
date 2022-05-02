@@ -16,14 +16,27 @@
               <!-- navbar start, navbar end -->
             </div>
           </nav>
+      </div>
 
-    </div>
-        <div class="navbar-end">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable button is-primary">
+          <a class="navbar-link">
+            Users
+          </a>
+          <% if (typeof users !== 'undefined') { %>
+            <div class="navbar-dropdown">
+            <% for (let i = 0; i < users.length; i++) { %>      
+                <a class="navbar-item" href="user/<%= users[i]._id %>">
+                  <%= users[i].username %>
+                </a>            
+                <% } %>
+              </div>
+            <% } %>     
+        </div>
           <a href="/aboutus"><button class="button is-info">About Us</button></a>
-        <a href="/user/new"><button class="button is-primary navbar-item">Make a new user account</button></a>
-        <!-- <button class="button is-primary navbar-item">Login</button>
-        <button class="button is-primary navbar-item">Register</button>  -->
-        </div>           
-    </div>
-
+          <a href="/user/new"><button class="button is-primary navbar-item">Make a new user account</button></a>
+          <!-- <button class="button is-primary navbar-item">Login</button>
+            <button class="button is-primary navbar-item">Register</button>  -->
+          </div>
+      </div>        
 </nav>
