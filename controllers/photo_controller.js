@@ -63,7 +63,7 @@ router.post('/', async (req, res, next) => {
 })
 
 // Photo EDIT route
-router.get('/edit/:_id', async (req,res, next)=>{
+router.get('/:_id/edit', async (req,res, next)=>{
     try {
         const updatedPhoto = await db.Photo.findById(req.params._id).populate('user');
         console.log(updatedPhoto);
@@ -81,7 +81,7 @@ router.get('/edit/:_id', async (req,res, next)=>{
 // photo "UPDATE" route - PUT request - update the User database and redirects to show route
 router.put('/:id', async (req, res, next)=>{
     try {
-        const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body);
+        const updatedPhoto = await db.Photo.findByIdAndUpdate(req.params.id, req.body);
         return res.redirect(`./${req.params.id}`)
     } catch (error) {
         console.log(error);
