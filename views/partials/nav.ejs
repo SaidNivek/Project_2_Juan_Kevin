@@ -20,10 +20,10 @@
 
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable button is-primary">
-          <a class="navbar-link">
-            Users
-          </a>
-          <% if (typeof users !== 'undefined') { %>
+        <% if (typeof users !== 'undefined') { %>
+            <a class="navbar-link">
+              Users
+            </a>
             <div class="navbar-dropdown">
             <% for (let i = 0; i < users.length; i++) { %>      
                 <a class="navbar-item" href="user/<%= users[i]._id %>">
