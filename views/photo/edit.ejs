@@ -8,11 +8,11 @@
 
 
     <div class="field"> 
-        <form method="POST" action="/user/<%=photo._id%>?_method=PUT">
+        <form method="POST" action="/user/photos/<%=photo._id%>?_method=PUT">
             <h1>Change the photo's caption</h1>
         <div>
-            <label class="label">Edit Caption</label>
-            <input class="input" placeholder="<%= photo.caption %>" type="text" name="image" "/>
+            <label for="caption" class="label">Edit Caption</label>
+            <input class="input" placeholder="<%= photo.caption %>" type="text" name="caption" id="caption" />
         </div>
         <div>
             <input class="button is-primary" type="submit" value="Update Caption"/>

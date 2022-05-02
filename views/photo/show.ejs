@@ -49,7 +49,8 @@
                     </div>
     
                     <div class="column is-8-tablet buttons edit-delete-buttons">
-                        <a href="/user/photos/edit/<%= onePhoto.id %>"><button class="button is-warning is-small">Edit Photo Caption</button></a>
+                        <a href="/user/photos/<%= onePhoto.id %>/edit"><button class="button is-warning is-small">Edit Photo Caption</button></a>
+                        
                         <form method="POST" id="onePhoto" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
                             <input class="button is-danger is-small" type="button" onclick="erase()" value="Delete Picture"/>
                             </div>

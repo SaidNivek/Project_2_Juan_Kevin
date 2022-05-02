@@ -41,12 +41,9 @@ app.get('/', async (req, res, next) => {
     try {
         const allUsers = await db.User.find({})
         const allPhotos = await db.Photo.find({}).populate('user')
-        const sortPhotos = allPhotos.sort((a,b) => {
-            b.createdAt - a.createdAt
-        })
         context = {   
             users: allUsers,         
-            photos: sortPhotos
+            photos: allPhotos
         }
         res.render('index.ejs', context)
     } catch (error) {

@@ -8,7 +8,7 @@
 
     <main class="container main-page">
         <div>
-            <% for (let i = 0; i < photos.length; i++)  { %>
+            <% for (let i = photos.length - 1; i >= 0; i--)  { %>
                 <div class="user-and-image-div">
                     <a class="link" href="/user/<%= photos[i].user._id %>">
                         <div class="main-page-user">                        
