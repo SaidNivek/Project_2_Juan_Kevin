@@ -32,7 +32,7 @@
                     <div class="columns is-multiline">
                         <% for (let i = 0; i < photos.length; i ++) { %>
                             <div class="column is-4-tablet">
-                                <a href="/user/photos/<%= photos[i]._id %>">
+                                <a class="has-ratio is-1by1" href="/user/photos/<%= photos[i]._id %>">
                                     <div class="photo-caption-div">
                                         <img src="<%= photos[i].image %>" alt="an image" />
                                     </div>

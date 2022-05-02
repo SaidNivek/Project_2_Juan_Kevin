@@ -38,7 +38,6 @@ footer img {
 
 nav .navbar-end {
   gap: 2px;
-  margin: 5px;
   display: flex;
   align-items: center;
 }
@@ -146,8 +145,8 @@ nav .title {
   margin-bottom: 5px;
 }
 .container.flex.user img {
-  width: 20rem;
-  height: 20rem;
+  width: 18rem;
+  height: 18rem;
   border-radius: 15px;
   box-shadow: 5px 5px grey;
 }
