@@ -7,27 +7,33 @@
         
         <%- include('../partials/nav.ejs') %>
 
-    <main>
-        <section class="container show-photo">
-                <a href="/user/<%= onePhoto.user._id %>">
-                    <img class="return-image" src="<%= onePhoto.user.image %>" alt="<%= onePhoto.user.username %>'s image">
-                </a>
-                <div class="container flex">
-                    <section>
-                        <div class="photo-show-div">                      
-                                <div>
-                                    <img src="<%= onePhoto.image %>" alt="an image" />                                    
-                                </div>    
-                                <div>
-                                    <h2><%= onePhoto.caption %></h2>
-                                </div>          
-                                <div>
-                                    <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button class="button is-info is-small">Add a Comment!</button></a>
-                                </div>
-                        </div>
-                    </section>
-                </div>         
-                    <div class="container">
+    <main class="container">
+        <div>
+            <section class="show-photo">
+                <div>
+                    <a href="/user/<%= onePhoto.user._id %>">
+                        <img class="return-image" src="<%= onePhoto.user.image %>" alt="<%= onePhoto.user.username %>'s image">
+                    </a>
+                </div>
+
+                <div class="columns is-multiline is-vcentered is-centered">
+                    <div class="flex ">
+                        <section>
+                            <div class="photo-show-div column is-12-mobile">                      
+                                    <div>
+                                        <img class="image the-image" src="<%= onePhoto.image %>" alt="an image" />                                    
+                                    </div>    
+                                    <div>
+                                        <h2><%= onePhoto.caption %></h2>
+                                    </div>          
+                                    <div>
+                                        <a href="/user/photos/comments/new/<%= onePhoto._id %>"><button class="button is-info is-small">Add a Comment!</button></a>
+                                    </div>
+                            </div>
+                        </section>                    
+                    </div>   
+    
+                    <div class="column is-7-tablet is-5-desktop">
                         <h2>Comments:</h2>
                         <% for (let i = 0; i < comments.length; i++) { %>
                             <div class="comment-div">
@@ -41,27 +47,27 @@
                             </div>
                         <% } %>
                     </div>
-                    <!-- <div>
-                        <input type="submit" value="Edit Comment: <%= onePhoto.name%>"/>
-                    </div>               -->
-                    <div class="buttons is-centered">
+    
+                    <div class="column is-8-tablet buttons edit-delete-buttons">
                         <a href="/user/photos/edit/<%= onePhoto.id %>"><button class="button is-warning is-small">Edit Photo Caption</button></a>
                         <form method="POST" id="onePhoto" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
                             <input class="button is-danger is-small" type="button" onclick="erase()"  value="Delete Picture"/>
-                            
-                        </div>
                         </form>
                     </div>
+                </div>
+
                 <script>
                     function erase (){
                         if(window.confirm("Are you sure you want to delete?")){
-                          document.getElementById("onePhoto").submit();
+                            document.getElementById("onePhoto").submit();
                         } else {
-                          return;
+                            return;
                         }
-                      }
+                        }
                 </script>   
-        </section> 
+
+            </section> 
+        </div>
     </main>
 </body>
 

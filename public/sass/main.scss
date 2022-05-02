@@ -1,5 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
-
+$media-tablet: "only screen and (max-width : 768px)";
 
 body{
     background-color: #F5F5F5;
@@ -65,9 +65,6 @@ nav {
         }
     }
     .main-page-photo {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
         h2 {
             font-size: 2rem;
         }
@@ -138,18 +135,16 @@ nav {
 
 // User profile show page
 .main-page-user {
-    margin: 5px;
-    .small-user-image {        
+    .small-user-image {
         width: 8vw;
         height: 8vw;
+        border-radius: 25px;
+        margin-top: 20px;
     }
     .user-div {
         display: flex;
         flex-direction: column;
-        position: absolute;
         align-items: center;
-        top: 10%;
-        left: 2%;
         div {
             margin-bottom: 3px;
         }
@@ -157,6 +152,7 @@ nav {
 }
 
 .container.flex.user {
+    margin-top: 20px;
     main, div {
         margin-bottom: 5px;
     }
@@ -181,12 +177,12 @@ nav {
 }
 
 // Photo show.ejs page CSS
-.container.show-photo {
+.show-photo {
     .return-image {
         width: 8rem;
         height: 8rem;
         border-radius: 25px;
-        margin-top: 2rem;
+        margin: 2rem;
     }
     .photo-show-div {
         display: flex;
@@ -196,10 +192,11 @@ nav {
     }
     h2 {
         font-size: 1.5rem;
+        margin-left: 5px;
     }
     img {
         border-radius: 15px;
-        max-width: 25vw;
+        width: 25vw;
     }
     section {
         width: 75vw;
@@ -224,12 +221,17 @@ nav {
     .comment {
         background-color: #F5F5F5;
     }
+    .edit-delete-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
 }
-
-.small-user-image {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 25px;
+@media only screen and (max-width: 768px) {
+    .the-image {
+        min-width: 45vw;
+    }
 }
 
 // Fields for adding new user/photo/comment and editing exisiting users/photos
