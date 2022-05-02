@@ -43,13 +43,24 @@
                     </div>
                     <!-- <div>
                         <input type="submit" value="Edit Comment: <%= onePhoto.name%>"/>
-                    </div> -->                
+                    </div>               -->
                     <div class="buttons is-centered">
                         <a href="/user/photos/edit/<%= onePhoto.id %>"><button class="button is-warning is-small">Edit Photo Caption</button></a>
-                        <form method="POST" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
-                            <input class="button is-danger is-small" type="submit" value="Delete Picture"/>
+                        <form method="POST" id="onePhoto" action="/user/photos/<%=onePhoto._id%>?_method=DELETE">
+                            <input class="button is-danger is-small" type="button" onclick="erase()"  value="Delete Picture"/>
+                            
+                        </div>
                         </form>
                     </div>
+                <script>
+                    function erase(){
+                        if(window.confirm("Are you sure you want to delete?")){
+                          document.getElementById("onclick").submit();
+                        } else {
+                          return;
+                        }
+                      }
+                </script>   
         </section> 
     </main>
 </body>

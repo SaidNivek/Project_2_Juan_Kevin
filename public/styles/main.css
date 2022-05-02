@@ -228,5 +228,8 @@ nav .title {
 .field .label {
   font-size: 1.3rem;
 }
-
+.onclick-erase {
+    background-color: darkorchid;
+    color:white;
+}
 /*# sourceMappingURL=main.css.map */
