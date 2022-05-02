@@ -1,6 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 body {
-  background-color: #95b8d1;
+  background-color: #F5F5F5;
 }
 
 form {
@@ -40,16 +40,9 @@ nav .navbar-end {
   gap: 2px;
   display: flex;
   align-items: center;
-  background-color: #a7bed3;
 }
-
 nav .title {
   font-size: 5rem;
-  background-color: #a7bed3;
-  
-}
-.navbar {
-    background-color: #a7bed3;
 }
 
 .container.main-page {
@@ -67,6 +60,14 @@ nav .title {
   border-radius: 25px;
   width: 7rem;
   height: 7rem;
+}
+.container.main-page .main-page-photo {
+  margin-left: 12rem;
+}
+@media only screen and (max-width: 900px) {
+  .container.main-page .main-page-photo {
+    margin-left: 5rem;
+  }
 }
 .container.main-page .main-page-photo h2 {
   font-size: 2rem;
