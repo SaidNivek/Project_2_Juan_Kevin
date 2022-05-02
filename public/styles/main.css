@@ -135,6 +135,7 @@ nav .title {
   width: 10rem;
   height: 10rem;
   border-radius: 25px;
+  margin-right: 50px;
 }
 
 .main-page-user .small-user-image {
@@ -248,5 +249,10 @@ margin-top: 10px;
 .field .label {
   font-size: 1.3rem;
 }
-
+hr{
+    border-top: 3px solid;
+    color: black;
+    /* margin-top: 70px;
+    width: 50% ; */
+}
 /*# sourceMappingURL=main.css.map */
