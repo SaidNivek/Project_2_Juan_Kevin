@@ -1,8 +1,12 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
-
 body {
-  background-image: linear-gradient(to bottom, #65a2b4, #c8e1e7);
+  background-color: #F5F5F5;
 }
+
+hr {
+  background-color: black;
+}
+
 form {
   margin: 5px;
 }
@@ -14,7 +18,7 @@ a:visited {
   color: black;
 }
 a:hover {
-  color: #023356;
+  color: #00d1b2;
   opacity: 0.7;
 }
 a:active {
@@ -22,11 +26,11 @@ a:active {
 }
 
 footer {
-    position:relative;
-    margin-bottom: 100px;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
 }
-
 footer a {
   margin: 1rem;
 }
@@ -40,21 +44,9 @@ nav .navbar-end {
   gap: 2px;
   display: flex;
   align-items: center;
-<<<<<<< HEAD
-  background-color: #65a2b4;
-=======
->>>>>>> 408a6e36fe3f771c882945bfdb44b9f3d42f1dcc
 }
 nav .title {
   font-size: 5rem;
-<<<<<<< HEAD
-  background-color: #65a2b4;
-  
-}
-.navbar {
-    background-color: #65a2b4;
-=======
->>>>>>> 408a6e36fe3f771c882945bfdb44b9f3d42f1dcc
 }
 
 .container.main-page {
@@ -94,9 +86,9 @@ nav .title {
   margin-left: 8rem;
 }
 .container.main-page .main-page-photo .caption-div {
-  background-color: #edfbff;
-  border: 1px solid black;
-  box-shadow: 3px 3px black;
+  background-color: white;
+  border: 1px solid grey;
+  box-shadow: 3px 3px grey;
   padding: 15px;
   margin: 5px 15px;
   border-radius: 5px;
@@ -248,6 +240,7 @@ nav .title {
   font-size: 2rem;
 }
 .field .button {
+  margin-top: 10px;
 }
 .field .label {
   font-size: 1.3rem;
