@@ -28,10 +28,11 @@ As a user, I would like to:
 - Click a button to post comments on pictures
 - Have a user profile
 - Update my profile picture
-- Delete my comments
-- Delete pictures that I post
-- Delete my entire profile
+- Delete comments
+- Delete pictures
+- Delete entire profile
 - Easily see if other user pictures on a main feed
+- Edit captions of a photo
 
 ## Stretch Goals
 - Main feed would have photos by timestamp (check)
@@ -72,8 +73,6 @@ Note: The database will not be connected, so you will need to link a Mongo Datab
 ## Known Issues
 - No user authentication, so everyone can delete all pictures/profiles/comments.
 - User selector dropdown always viewable when screen size is smaller.
-- If only 1 or 2 images in a profile, the image ratios are incorrectly displayed.  If there are 3 or more, it is fine.
-- Caption edit is not connected to the database.
 
 ## Major Hurdles
 - Main feed displaying pictures in chronological order.
@@ -82,6 +81,6 @@ Note: The database will not be connected, so you will need to link a Mongo Datab
 
 ## Future Goals & Implementation
 - Add auth for users.
-- Prevent all users from deleting eny picture on the site.
+- Prevent all users from deleting any picture on the site.
 - You can only delete your own uploaded images.
 - "Like" button for pictures to tally how many likes have been given.
