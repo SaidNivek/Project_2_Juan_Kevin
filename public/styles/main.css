@@ -1,6 +1,10 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
 body {
-  background-color: #95b8d1;
+  /* background-color: #acd8e6; */
+  background-size: conver;
+  background-image: linear-gradient(to bottom, #65a2b4, #c8e1e7);
+  
 }
 
 a {
@@ -10,7 +14,7 @@ a:visited {
   color: black;
 }
 a:hover {
-  color: #00d1b2;
+  color: #023356;
   opacity: 0.7;
 }
 a:active {
@@ -21,7 +25,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
+  background: red;
 }
 footer a {
   margin: 1rem;
@@ -38,16 +42,16 @@ nav .navbar-end {
   margin-right: 3px;
   display: flex;
   align-items: center;
-  background-color: #a7bed3;
+  background-color: #65a2b4;
 }
 
 nav .title {
   font-size: 5rem;
-  background-color: #a7bed3;
+  background-color: #65a2b4;
   
 }
 .navbar {
-    background-color: #a7bed3;
+    background-color: #65a2b4;
 }
 
 .container.main-page {
@@ -79,9 +83,9 @@ nav .title {
   margin-left: 8rem;
 }
 .container.main-page .main-page-photo .caption-div {
-  background-color: white;
-  border: 1px solid grey;
-  box-shadow: 3px 3px grey;
+  background-color: #edfbff;
+  border: 1px solid black;
+  box-shadow: 3px 3px black;
   padding: 15px;
   margin: 5px 15px;
   border-radius: 5px;
