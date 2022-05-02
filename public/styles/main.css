@@ -1,6 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 body {
-  background-color: #F5F5F5;
+  background-color: #95b8d1;
 }
 
 a {
@@ -38,9 +38,16 @@ nav .navbar-end {
   margin-right: 3px;
   display: flex;
   align-items: center;
+  background-color: #a7bed3;
 }
+
 nav .title {
   font-size: 5rem;
+  background-color: #a7bed3;
+  
+}
+.navbar {
+    background-color: #a7bed3;
 }
 
 .container.main-page .main-page-user {
