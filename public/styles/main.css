@@ -43,6 +43,9 @@ nav .title {
   font-size: 5rem;
 }
 
+.container.main-page {
+  margin: 5px;
+}
 .container.main-page .main-page-user {
   display: flex;
   align-items: center;
