@@ -8,30 +8,36 @@
  
     <%- include('partials/nav.ejs') %>
 
-    <main class="container main-page">  
-        <% for (let i = 0; i < photos.length; i++)  { %>
-            <div class="user-and-image-div">
-                <a class="link" href="/user/<%= photos[i].user._id %>">
-                    <div class="main-page-user">                        
-                            <img class="user-image" src="<%= photos[i].user.image %>" alt="Picture of <%= photos[i].user.username %>">                        
-                            <h2><%= photos[i].user.username %></h2>                        
+    <main class="container main-page">
+        <div>
+            <% for (let i = 0; i < photos.length; i++)  { %>
+                <div class="user-and-image-div">
+                    <a class="link" href="/user/<%= photos[i].user._id %>">
+                        <div class="main-page-user">                        
+                                <img class="user-image" src="<%= photos[i].user.image %>" alt="Picture of <%= photos[i].user.username %>">                        
+                                <h2><%= photos[i].user.username %></h2>                        
+                        </div>
+                    </a>  
+                </div>
+                <div class="main-page-photo columns is-multiline">
+                    <div class="column is-10-mobile is-6-tablet">
+                        <a href="/user/photos/<%= photos[i]._id %>">
+                            <div>
+                                <img src="<%= photos[i].image %>" alt="A picture with the caption <%= photos[i].caption %>">
+                            </div>
+                        </a>
                     </div>
-                </a>  
-            </div>
-            <div class="main-page-photo">
-                <a href="/user/photos/<%= photos[i]._id %>">
-                    <div>
-                        <img src="<%= photos[i].image %>" alt="A picture with the caption <%= photos[i].caption %>">
+                    <div class="column is-10-mobile is-6-tablet">
+                        <a href="/user/photos/<%= photos[i]._id %>">
+                            <h2>Caption:</h2> 
+                            <div class="caption-div">
+                                <h2><%= photos[i].caption %></h2>                  
+                            </div>
+                        </a>          
                     </div>
-                </a>
-                <a href="/user/photos/<%= photos[i]._id %>">
-                    <h2>Caption:</h2> 
-                    <div class="caption-div">
-                        <h2><%= photos[i].caption %></h2>                  
-                    </div>
-                </a>          
-            </div>
-        <% } %>        
+                </div>
+            <% } %>        
+        </div>  
     </main>
 </body>
 </html> 

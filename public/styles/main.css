@@ -56,11 +56,6 @@ nav .title {
   width: 7rem;
   height: 7rem;
 }
-.container.main-page .main-page-photo {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 .container.main-page .main-page-photo h2 {
   font-size: 2rem;
 }
@@ -123,25 +118,24 @@ nav .title {
   border-radius: 25px;
 }
 
-.main-page-user {
-  margin: 5px;
-}
 .main-page-user .small-user-image {
   width: 8vw;
   height: 8vw;
+  border-radius: 25px;
+  margin-top: 20px;
 }
 .main-page-user .user-div {
   display: flex;
   flex-direction: column;
-  position: absolute;
   align-items: center;
-  top: 10%;
-  left: 2%;
 }
 .main-page-user .user-div div {
   margin-bottom: 3px;
 }
 
+.container.flex.user {
+  margin-top: 20px;
+}
 .container.flex.user main, .container.flex.user div {
   margin-bottom: 5px;
 }
@@ -164,35 +158,36 @@ nav .title {
   font-size: 1.3rem;
 }
 
-.container.show-photo .return-image {
+.show-photo .return-image {
   width: 8rem;
   height: 8rem;
   border-radius: 25px;
-  margin-top: 2rem;
+  margin: 2rem;
 }
-.container.show-photo .photo-show-div {
+.show-photo .photo-show-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.container.show-photo h2 {
+.show-photo h2 {
   font-size: 1.5rem;
+  margin-left: 5px;
 }
-.container.show-photo img {
+.show-photo img {
   border-radius: 15px;
-  max-width: 25vw;
+  width: 25vw;
 }
-.container.show-photo section {
+.show-photo section {
   width: 75vw;
 }
-.container.show-photo .container {
+.show-photo .container {
   width: 30vw;
 }
-.container.show-photo .username {
+.show-photo .username {
   font-size: 1.3em;
 }
-.container.show-photo .comment-div, .container.show-photo .comment {
+.show-photo .comment-div, .show-photo .comment {
   background-color: white;
   border: 1px solid grey;
   box-shadow: 3px 3px grey;
@@ -200,19 +195,24 @@ nav .title {
   margin: 5px 15px;
   border-radius: 5px;
 }
-.container.show-photo p {
+.show-photo p {
   font-size: 1.2rem;
 }
-.container.show-photo .comment {
+.show-photo .comment {
   background-color: #F5F5F5;
 }
-
-.small-user-image {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 25px;
+.show-photo .edit-delete-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+  .the-image {
+    min-width: 45vw;
+  }
+}
 .field {
   display: flex;
   align-items: center;
@@ -228,11 +228,5 @@ nav .title {
 .field .label {
   font-size: 1.3rem;
 }
-.onclick-erase {
-    background-color: darkorchid;
-    color:white;
-}
-.dlg-container {
-    background-color: red;
-}
+
 /*# sourceMappingURL=main.css.map */
