@@ -1,6 +1,8 @@
 # Project_2_Juan_Kevin
 
 ## Project Description
+
+
 Login online, see user pictures and stuff, with a description.  Before logging in immediately, where you have to sign in before you see pictures, this one will let you still see pictures even if you don't log in.  You can see the pictures posted and click on them, etc., without needing to log in.  Sort of a pinterest/IG mashup.  STRETCH** Can people comment if they are not logged in? (Anonymous user thing?)  Each user would have their own page (like IG/Pinterest) and there would be a main feed STRETCH** with timestamped photos.
 
 ## Planning Process
@@ -29,14 +31,10 @@ As a user, I would like to:
 - Easily see if other user pictures on a main feed
 
 ## Stretch Goals
-- Easily see if there are other pictures posted on a main page
-- Main feed would have photos by timestamp
-- user authentication / email sign-up
-- Comments by anonymous users or only authenticated users?
-- Grid of posted pictures on profile page
-- Delete picture or comments if authenticated
-
-## MVP Project Description
+- Main feed would have photos by timestamp (check)
+- Grid of posted pictures on profile page (check)
+- Delete picture or comments if authenticated (no)
+- user authentication / email sign-up (no)
 
 ## Layout / Wireframes
 
@@ -47,7 +45,8 @@ As a user, I would like to:
 
 ## Installation Instructions
 
+## Known Bugs
+
 ## Major Hurdles
 
 ## Future Goals & Implementation
-
