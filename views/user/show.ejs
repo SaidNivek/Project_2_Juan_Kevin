@@ -7,8 +7,8 @@
     <%- include('../partials/nav.ejs') %>
 
     <section class="container">
-        <div class="columns is-multiline is-1 is-variable">
-            <div class="main-page-user column is-10-mobile is-2-tablet">
+        <div class="columns is-multiline">
+            <div class="main-page-user column is-12-mobile is-6-tablet">
                 <div class="user-div">
                     <img class="small-user-image" src="<%= oneUser.image %>" alt="Picture of <%= oneUser.username %>">
                     <h2><%= oneUser.username %></h2>
@@ -23,27 +23,21 @@
                 </div>
             </div>
     
-            <main class="container flex user column is-12-mobile is-8-tablet">  
+            <main class="container flex user column is-12-mobile is-10-tablet">  
                 <div>
                     <a href="/user/photos/new/<%= oneUser._id %>"><button class="button is-info">Upload a Picture!</button></a>
                 </div>
         
                 <section>
-                    <div picture-grid-div>
+                    <div class="columns is-multiline">
                         <% for (let i = 0; i < photos.length; i ++) { %>
-                            <% if(i % 3 === 0) { %>
-                                <div class="columns is-multiline">
-                            <% } %>
-                            <div class="column is-12-mobile">
+                            <div class="column is-4-tablet">
                                 <a href="/user/photos/<%= photos[i]._id %>">
                                     <div class="photo-caption-div">
                                         <img src="<%= photos[i].image %>" alt="an image" />
                                     </div>
                                 </a>
                             </div>
-                            <% if(i % 3 === 2) { %>
-                                </div>
-                            <% } %>
                         <% } %>
                     </div>
                 </section>
