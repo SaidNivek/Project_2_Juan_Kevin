@@ -32,7 +32,7 @@
                 <section>
                     <!-- The below code will check for how many photos there are and then give them the appropriate sizing in order to make sure they are spaced/sized properly on the page -->
                     <div class="columns is-multiline">
-                        <% for (let i = 0; i < photos.length; i ++) { %>
+                        <% for (let i = photos.length - 1; i >= 0; i--) { %>
                             <% if (photos.length > 2) { %>
                                 <div class="column is-4-tablet">
                                     <a class="has-ratio is-1by1" href="/user/photos/<%= photos[i]._id %>">
