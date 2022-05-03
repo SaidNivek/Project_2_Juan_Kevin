@@ -6,7 +6,11 @@ body {
 form {
   margin: 5px;
 }
-
+.title{
+    font-family: Oleo;
+    color: #3d5962;
+    font-weight: 50px;
+}
 a {
   color: black;
 }
@@ -43,8 +47,9 @@ nav .navbar-end {
   background-color: #65a2b4;
 }
 nav .title {
-  font-size: 5rem;
+  font-size: 3rem;
   background-color: #65a2b4;
+  padding-bottom: 20px;
   
 }
 .navbar {
@@ -135,6 +140,7 @@ nav .title {
   width: 10rem;
   height: 10rem;
   border-radius: 25px;
+  margin-right: 50px;
 }
 
 .main-page-user .small-user-image {
@@ -248,5 +254,10 @@ margin-top: 10px;
 .field .label {
   font-size: 1.3rem;
 }
-
+hr{
+    border-top: 3px solid;
+    color: black;
+    /* margin-top: 70px;
+    width: 50% ; */
+}
 /*# sourceMappingURL=main.css.map */
