@@ -9,6 +9,7 @@ form {
 .title{
     font-family: Oleo;
     color: #3d5962;
+    font-weight: 50px;
 }
 a {
   color: black;
@@ -46,8 +47,9 @@ nav .navbar-end {
   background-color: #65a2b4;
 }
 nav .title {
-  font-size: 5rem;
+  font-size: 3rem;
   background-color: #65a2b4;
+  padding-bottom: 20px;
   
 }
 .navbar {
