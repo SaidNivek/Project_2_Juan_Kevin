@@ -17,8 +17,8 @@
                         <a href="/user/<%= oneUser._id %>/edit"><button class="button is-primary is-small">Click here to change your profile picture</button></a>
                     </div>      
                     <div>
-                        <form method="POST" action="/user/<%=oneUser._id%>?_method=DELETE">
-                            <input class="button is-danger is-small" type="submit" value="Delete Profile"/>
+                        <form method="POST" id="oneUser" action="/user/<%=oneUser._id%>?_method=DELETE">
+                            <input class="button is-danger is-small" onclick="deleteProfile()" type="button" value="Delete Profile"/>
                         </form>
                     </div>
                 </div>
@@ -61,6 +61,15 @@
                         <% } %>
                     </div>
                 </section>
+                <script>
+                    function deleteProfile (){
+                        if(window.confirm("Are you sure you want to delete profile?")){
+                            document.getElementById("oneUser").submit();
+                        } else {
+                            return;
+                        }
+                        }
+                </script>   
                
             </main>
         </div>
